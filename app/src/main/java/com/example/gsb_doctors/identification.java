@@ -17,9 +17,8 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class identification extends AppCompatActivity {
 
-    android.widget.EditText AddressMail, mdp;
-    Button b4;
-    TextView titles;
+    android.widget.EditText pseudo, mdp;
+    Button btn;
     ProgressBar progressBar;
 
 
@@ -29,24 +28,21 @@ public class identification extends AppCompatActivity {
           super.onCreate(savedInstanceState);
           setContentView(R.layout.login_main);
 
-          AddressMail = findViewById(R.id.ConnexionAdresseMail);
-          mdp = findViewById(R.id.ConnexionPassword);
-          b4 = findViewById(R.id.button3);
+          pseudo = findViewById(R.id.connexionPseudo);
+          mdp = findViewById(R.id.connexionPassword);
+          btn = findViewById(R.id.btnLogin);
           progressBar = findViewById(R.id.progress);
 
-          titles = findViewById(R.id.loginText);
-
-
-            b4.setOnClickListener(new View.OnClickListener() {
+            btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    String  email, password;
-                    email = String.valueOf(AddressMail.getText());
+                    String  Pseudo, password;
+                    Pseudo = String.valueOf(pseudo.getText());
                     password = String.valueOf(mdp.getText());
 
                     // Verification of the type of the value entered in the EditText
-                    if (!email.equals("") && !password.equals("")) {
+                    if (!Pseudo.equals("") && !password.equals("")) {
                         //Start ProgressBar first (Set visibility VISIBLE)
                         progressBar.setVisibility(View.VISIBLE);
                         Handler handler = new Handler(Looper.getMainLooper());
@@ -56,12 +52,12 @@ public class identification extends AppCompatActivity {
                                 //Starting Write and Read data with URL
                                 //Creating array for parameters
                                 String[] field = new String[2];
-                                field[0] = "email";
+                                field[0] = "pseudo";
                                 field[1] = "mdp";
 
                                 //Creating array for data
                                 String[] data = new String[2];
-                                data[0] = email;
+                                data[0] = Pseudo;
                                 data[1] = password;
 
                                 PutData putData = new PutData("http://192.168.1.136/Chat_Android/login.php", "POST", field, data);  // Mettre son adrr ip

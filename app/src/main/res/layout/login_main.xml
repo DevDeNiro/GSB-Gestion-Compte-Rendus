@@ -12,25 +12,37 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         >
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se connecter"
+            android:textColor="@color/main_color"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_marginTop="100dp"
+            app:layout_constraintStrart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/ConnexionAdresseMail"
-            android:layout_width="250dp"
+            android:id="@+id/connexionPseudo"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="275dp"
-            android:inputType="textEmailAddress"
-            android:hint="Adresse mail"
+            android:layout_marginTop="100dp"
             android:drawableRight="@drawable/ic_person"
+            android:hint="Pseudo"
+            android:inputType="textEmailAddress"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/ConnexionPassword"
-            android:layout_width="250dp"
+            android:id="@+id/connexionPassword"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:inputType="textPassword"
             android:hint="Mot de passe"
             android:drawableRight="@drawable/ic_lock"
@@ -47,13 +59,12 @@
             app:layout_constraintTop_toBottomOf="@+id/button3" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnLogin"
             android:layout_width="200dp"
             android:layout_height="75dp"
             android:text="CONNEXION"
             android:layout_marginHorizontal="500dp"
             android:layout_marginTop="50dp" />
-
 
     </LinearLayout>
 
