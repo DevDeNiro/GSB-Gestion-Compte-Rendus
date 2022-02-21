@@ -36,6 +36,7 @@ public class identification extends AppCompatActivity {
 
           titles = findViewById(R.id.loginText);
 
+
             b4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,16 +71,16 @@ public class identification extends AppCompatActivity {
 
                                         String result = putData.getResult();
 
+                                        /*
                                         if (result.equals("Login Success")) {
                                             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                             Intent conversations = new Intent(getApplicationContext(), conversations.class);
                                             startActivity(conversations);
                                             finish();
                                         } else {
-
                                             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-
                                         }
+                                         */
                                     }
                                 }
                             }
@@ -96,6 +97,5 @@ public class identification extends AppCompatActivity {
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
-    }
+        }
     }
