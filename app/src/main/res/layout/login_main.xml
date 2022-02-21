@@ -21,9 +21,7 @@
             android:fontFamily="@font/poppinsbold"
             android:gravity="center"
             android:textSize="30sp"
-            android:layout_marginTop="100dp"
-            app:layout_constraintStrart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="100dp" />
 
         <EditText
             android:id="@+id/connexionPseudo"
