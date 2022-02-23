@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.gsb_doctors.R;
+import com.example.gsb_doctors.accueil;
+import com.example.gsb_doctors.consulter;
+import com.example.gsb_doctors.saisir;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -27,9 +30,19 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        Fragment fragment = null;
+        switch (position) {
+            case 0:
+                fragment = new saisir();
+                break;
+            case 1:
+                fragment = new accueil();
+                break;
+            case 2:
+                fragment = new consulter();
+                break;
+        }
+        return fragment;
     }
 
     @Nullable
