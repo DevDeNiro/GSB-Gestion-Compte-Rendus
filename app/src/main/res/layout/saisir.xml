@@ -5,12 +5,102 @@
     android:layout_height="match_parent"
     android:gravity="center"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/prenom"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Saisir"
-        android:textSize="30sp"
-        />
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType=""
+        android:hint="Prénom"
+        android:drawableRight="@drawable/person"/>
+    <EditText
+        android:id="@+id/nom"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="Nom"
+        android:drawableRight="@drawable/person2"/>
+    <EditText
+        android:id="@+id/naissance"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="date"
+        android:hint="Date de naissance"
+        android:drawableRight="@drawable/cake"/>
+    <EditText
+        android:id="@+id/adresse"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="Adresse"
+        android:drawableRight="@drawable/house"/>
+    <EditText
+        android:id="@+id/telephone"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="phone"
+        android:hint="Téléphone"
+        android:drawableRight="@drawable/phone"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="textWebEmailAddress"
+        android:hint="Email"
+        android:drawableRight="@drawable/email"/>
+    <EditText
+        android:id="@+id/antecedant"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType=""
+        android:hint="Antécédants médicaux"
+        android:drawableRight="@drawable/ante"/>
+    <EditText
+        android:id="@+id/medicament"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="Médicaments adminitrés"
+        android:drawableRight="@drawable/medoc"/>
+    <EditText
+        android:id="@+id/duree"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="number"
+        android:hint="Durée de visite (en minute)"
+        android:drawableRight="@drawable/sablier"/>
+    <EditText
+        android:id="@+id/rdv"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="date"
+        android:hint="Prochain rendez-vous"
+        android:drawableRight="@drawable/rdv"/>
 
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
