@@ -20,7 +20,7 @@ import com.example.gsb_doctors.saisir;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_2, R.string.tab_text_3, R.string.tab_text_1};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -33,13 +33,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new saisir();
-                break;
-            case 1:
                 fragment = new accueil();
                 break;
-            case 2:
+            case 1:
                 fragment = new consulter();
+                break;
+            case 2:
+                fragment = new saisir();
                 break;
         }
         return fragment;
