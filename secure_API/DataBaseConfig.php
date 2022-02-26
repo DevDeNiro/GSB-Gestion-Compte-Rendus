@@ -14,7 +14,7 @@ class DataBaseConfig
         $this->servername = 'localhost';
         $this->username = 'root';
         $this->password = '';
-        $this->databasename = 'projet_android';
+        $this->databasename = 'gsb_doctor';
         // $this->table = 'utilisateur';
 
     }

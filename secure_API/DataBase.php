@@ -52,14 +52,22 @@ class DataBase
         return $login;
     }
 
-    function signUp($table, $email, $username, $password)
+    function signUp($table, $prenom, $nom, $naiss, $adresse, $tel, $email, $ante, $medic, $duree, $rdv)
     {
-        $username = $this->prepareData($username);
-        $password = $this->prepareData($password);
+        $prenom = $this->prepareData($prenom);
+        $nom = $this->prepareData($nom);
+        $naiss = $this->prepareData($naiss);
+        $adresse = $this->prepareData($adresse);
+        $tel = $this->prepareData($tel);
         $email = $this->prepareData($email);
-        $password = password_hash($password, PASSWORD_DEFAULT);
+        $ante = $this->prepareData($ante);
+        $medic = $this->prepareData($medic);
+        $duree = $this->prepareData($duree);
+        $rdv = $this->prepareData($rdv);
+
         $this->sql =
-            "INSERT INTO " . $table . " (pseudo, mdp, email) VALUES ('" . $username . "','" . $password . "','" . $email . "')";
+            "INSERT INTO " . $table . " (prenom, nom, naiss, adresse, tel, email, ante, medic, duree, rdv) VALUES 
+            ('" . $prenom . "','" . $nom . "','" . $naiss . "','" . $adresse . "','" . $tel . "','" . $email . "','" . $ante . "','" . $medic . "','" . $duree . "','" . $rdv . "')";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;
