@@ -34,17 +34,17 @@ class DataBase
         return mysqli_real_escape_string($this->connect, stripslashes(htmlspecialchars($data)));
     }
 
-    function logIn($table, $email, $password)
+    function logIn($table, $pseudo, $password)
     {
-        $email = $this->prepareData($email);
+        $pseudo = $this->prepareData($pseudo);
         $password = $this->prepareData($password);
-        $this->sql = "select * from " . $table . " where email = '" . $email . "'";
+        $this->sql = "select * from " . $table . " where pseudo = '" . $pseudo . "'";
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) != 0) {
-            $dbusername = $row['email'];
+            $dbusername = $row['pseudo'];
             $dbpassword = $row['mdp'];
-            if ($dbusername == $email && password_verify($password, $dbpassword)) {
+            if ($dbusername == $pseudo && password_verify($password, $dbpassword)) {
                 $login = true;
             } else $login = false;
         } else $login = false;
@@ -72,7 +72,4 @@ class DataBase
             return true;
         } else return false;
     }
-
 }
-
-?>

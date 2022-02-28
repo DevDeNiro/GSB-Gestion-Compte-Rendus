@@ -14,25 +14,27 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/prenom"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType=""
-        android:hint="Prénom"
-        android:drawableRight="@drawable/person"/>
-    <EditText
-        android:id="@+id/nom"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="text"
-        android:hint="Nom"
-        android:drawableRight="@drawable/person2"/>
-    <EditText
+        <EditText
+            android:id="@+id/prenom"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="75dp"
+            android:layout_marginTop="15dp"
+            android:drawableRight="@drawable/person"
+            android:hint="Prénom"
+            android:inputType="" />
+
+        <EditText
+            android:id="@+id/nom"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="75dp"
+            android:layout_marginTop="15dp"
+            android:drawableRight="@drawable/person2"
+            android:hint="Nom"
+            android:inputType="text" />
+
+        <EditText
         android:id="@+id/naissance"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

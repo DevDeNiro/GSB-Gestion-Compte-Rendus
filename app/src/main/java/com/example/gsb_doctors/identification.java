@@ -60,23 +60,21 @@ public class identification extends AppCompatActivity {
                                 data[0] = Pseudo;
                                 data[1] = password;
 
-                                PutData putData = new PutData("http://192.168.1.136/Chat_Android/login.php", "POST", field, data);  // Mettre son adrr ip
+                                PutData putData = new PutData("http://192.168.56.1/GSB_doctors/secure_API/login.php", "POST", field, data);  // Mettre son adrr ip
                                 if (putData.startPut()) {
                                     if (putData.onComplete()) {
                                         progressBar.setVisibility(View.GONE);
 
-                                        String result = putData.getResult();
+                                         String result = putData.getResult();
 
-                                        /*
                                         if (result.equals("Login Success")) {
                                             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                            Intent conversations = new Intent(getApplicationContext(), conversations.class);
-                                            startActivity(conversations);
+                                            Intent home = new Intent(getApplicationContext(), accueil.class);
+                                            startActivity(home);
                                             finish();
                                         } else {
                                             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                         }
-                                         */
                                     }
                                 }
                             }
