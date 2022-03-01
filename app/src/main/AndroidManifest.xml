@@ -10,7 +10,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/saisir"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GSBdoctors">
@@ -18,7 +18,7 @@
         <activity
             android:name=".saisir"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="@string/saisir"
             android:theme="@style/Theme.GSBdoctors.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,21 @@
             android:name=".identification"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/Sing_up">
+            android:label="@string/connecter">
+        </activity>
+
+        <activity
+            android:name=".accueil"
+            android:exported="true"
+            tools:ignore="Instantiatable"
+            android:label="@string/accueil">
+        </activity>
+
+        <activity
+            android:name=".consulter"
+            android:exported="true"
+            tools:ignore="Instantiatable"
+            android:label="@string/Consulter">
         </activity>
 
     </application>
