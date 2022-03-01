@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,132 +21,192 @@
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp">
 
-        <EditText
-            android:id="@+id/prenom"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="70dp"
-            android:drawableRight="@drawable/person"
-            android:hint="Prénom"
-            android:inputType="" />
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-        <EditText
-            android:id="@+id/nom"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="15dp"
-            android:drawableRight="@drawable/person2"
-            android:hint="Nom"
-            android:inputType="text" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
 
-        <EditText
-        android:id="@+id/naissance"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="date"
-        android:hint="Date de naissance"
-        android:drawableRight="@drawable/cake"/>
-    <EditText
-        android:id="@+id/adresse"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="text"
-        android:hint="Adresse"
-        android:drawableRight="@drawable/house"/>
-    <EditText
-        android:id="@+id/telephone"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="phone"
-        android:hint="Téléphone"
-        android:drawableRight="@drawable/phone"/>
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="textWebEmailAddress"
-        android:hint="Email"
-        android:drawableRight="@drawable/email"/>
-    <EditText
-        android:id="@+id/ante"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType=""
-        android:hint="Antécédants médicaux"
-        android:drawableRight="@drawable/ante"/>
-    <EditText
-        android:id="@+id/medicament"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="text"
-        android:hint="Médicaments adminitrés"
-        android:drawableRight="@drawable/medoc"/>
-    <EditText
-        android:id="@+id/duree"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="number"
-        android:hint="Durée de visite (en minute)"
-        android:drawableRight="@drawable/sablier"/>
-    <EditText
-        android:id="@+id/rdv"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="date"
-        android:hint="Prochain rendez-vous"
-        android:drawableRight="@drawable/rdv"/>
+                <EditText
+                    android:id="@+id/prenom"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:drawableRight="@drawable/person"
+                    android:hint="Prénom"
+                    android:inputType=""
+                    android:minHeight="48dp" />
 
-        <Button
-            android:id="@+id/enregistrer"
-            android:layout_width="200dp"
-            android:layout_height="75dp"
-            android:text="Enregistrer"
-            android:layout_marginHorizontal="500dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"/>
+                <EditText
+                    android:id="@+id/nom"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:drawableRight="@drawable/person2"
+                    android:hint="Nom"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
 
-        <ProgressBar
-            android:id="@+id/progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+            </LinearLayout>
 
-    </LinearLayout>
-        </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/naissance"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:drawableRight="@drawable/cake"
+                    android:hint="Date de naissance"
+                    android:inputType="date"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/adresse"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/house"
+                    android:hint="Adresse"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+
+                <EditText
+                    android:id="@+id/telephone"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/phone"
+                    android:hint="Téléphone"
+                    android:inputType="phone"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/email"
+                    android:hint="Email"
+                    android:inputType="textWebEmailAddress"
+                    android:minHeight="48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/ante"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/ante"
+                    android:hint="Antécédants médicaux"
+                    android:inputType=""
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/medicament"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/medoc"
+                    android:hint="Médicaments adminitrés"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/duree"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/sablier"
+                    android:hint="Durée de visite (en minute)"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/rdv"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableRight="@drawable/rdv"
+                    android:hint="Prochain rendez-vous"
+                    android:inputType="date" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/enregistrer"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:layout_marginHorizontal="500dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:text="Enregistrer" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

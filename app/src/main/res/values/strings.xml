@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">GSB-doctors</string>
+    <string name="app_name">GSB-doctors | Saisir une fiche</string>
     <string name="tab_text_1">Saisir</string>
     <string name="tab_text_2">Accueil</string>
     <string name="tab_text_3">Consulter</string>
+    <string name="Sing_up">Se connecter</string>
 </resources>
