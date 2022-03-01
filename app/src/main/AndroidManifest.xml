@@ -33,7 +33,5 @@
             android:label="@string/Sing_up">
         </activity>
 
-
     </application>
-
 </manifest>

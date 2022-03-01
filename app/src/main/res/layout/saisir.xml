@@ -32,7 +32,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="370dp">
+            android:layout_height="500dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -48,31 +48,32 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:gravity="center"
-                android:text="Saisir" />
+                android:text="Saisir"
+                style="?android:attr/buttonBarButtonStyle" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Accueil" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Accueil"
+                    tools:ignore="TextContrastCheck" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Consulter" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Consulter"/>
         </LinearLayout>
-
-
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center">
 
                 <EditText
@@ -83,7 +84,8 @@
                     android:drawableRight="@drawable/person"
                     android:hint="Prénom"
                     android:inputType=""
-                    android:minHeight="48dp" />
+                    android:minHeight="48dp"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/nom"
@@ -93,13 +95,14 @@
                     android:drawableRight="@drawable/person2"
                     android:hint="Nom"
                     android:inputType="text"
-                    android:minHeight="48dp" />
+                    android:minHeight="48dp"
+                    android:autofillHints="" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -127,7 +130,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
                 android:gravity="center">
 
 
@@ -156,7 +159,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:gravity="center">
 
                 <EditText
@@ -176,7 +179,7 @@
                     android:layout_marginHorizontal="15dp"
                     android:drawableRight="@drawable/medoc"
                     android:hint="Médicaments adminitrés"
-                    android:inputType="text"
+                    android:inputType=""
                     android:minHeight="48dp" />
 
             </LinearLayout>
@@ -184,7 +187,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:gravity="center">
 
                 <EditText
@@ -204,7 +207,8 @@
                     android:layout_marginHorizontal="15dp"
                     android:drawableRight="@drawable/rdv"
                     android:hint="Prochain rendez-vous"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:minHeight="48dp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -214,17 +218,9 @@
                 android:layout_width="200dp"
                 android:layout_height="75dp"
                 android:layout_marginHorizontal="500dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="20dp"
                 android:text="Enregistrer" />
-
-            <ProgressBar
-                android:id="@+id/progress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
         </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
