@@ -32,16 +32,14 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="370dp">
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="50dp"
                 android:gravity="center"
-                android:layout_marginTop="33dp">
+                android:layout_marginTop="57dp">
 
             <Button
                 android:layout_width="0dp"
@@ -74,8 +72,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="50dp"
                 android:gravity="center">
 
                 <EditText
@@ -102,8 +99,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="50dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -111,7 +107,6 @@
                     android:id="@+id/naissance"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginHorizontal="15dp"
                     android:drawableRight="@drawable/cake"
                     android:hint="Date de naissance"
@@ -123,7 +118,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/house"
                     android:hint="Adresse"
                     android:inputType="text"
@@ -133,8 +127,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="50dp"
                 android:gravity="center">
 
 
@@ -143,7 +136,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/phone"
                     android:hint="Téléphone"
                     android:inputType="phone"
@@ -154,7 +146,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/email"
                     android:hint="Email"
                     android:inputType="textWebEmailAddress"
@@ -165,8 +156,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="60dp"
                 android:gravity="center">
 
                 <EditText
@@ -174,7 +164,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/ante"
                     android:hint="Antécédants médicaux"
                     android:inputType=""
@@ -185,7 +174,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/medoc"
                     android:hint="Médicaments adminitrés"
                     android:inputType="text"
@@ -196,8 +184,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="60dp"
                 android:gravity="center">
 
                 <EditText
@@ -205,7 +192,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/sablier"
                     android:hint="Durée de visite (en minute)"
                     android:inputType="number"
@@ -216,7 +202,6 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp"
                     android:drawableRight="@drawable/rdv"
                     android:hint="Prochain rendez-vous"
                     android:inputType="date" />
