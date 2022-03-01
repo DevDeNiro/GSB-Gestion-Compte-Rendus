@@ -30,6 +30,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="59dp">
 
+<<<<<<< HEAD
         <LinearLayout
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -205,6 +206,115 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
         </LinearLayout>
+=======
+        <EditText
+            android:id="@+id/prenom"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="75dp"
+            android:layout_marginTop="70dp"
+            android:drawableRight="@drawable/person"
+            android:hint="Prénom"
+            android:inputType="" />
+
+        <EditText
+            android:id="@+id/nom"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="75dp"
+            android:layout_marginTop="15dp"
+            android:drawableRight="@drawable/person2"
+            android:hint="Nom"
+            android:inputType="text" />
+
+        <EditText
+        android:id="@+id/naissance"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="date"
+        android:hint="Date de naissance"
+        android:drawableRight="@drawable/cake"/>
+    <EditText
+        android:id="@+id/adresse"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="Adresse"
+        android:drawableRight="@drawable/house"/>
+    <EditText
+        android:id="@+id/telephone"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="phone"
+        android:hint="Téléphone"
+        android:drawableRight="@drawable/phone"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="textWebEmailAddress"
+        android:hint="Email"
+        android:drawableRight="@drawable/email"/>
+    <EditText
+        android:id="@+id/ante"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType=""
+        android:hint="Antécédants médicaux"
+        android:drawableRight="@drawable/ante"/>
+    <EditText
+        android:id="@+id/medicament"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="Médicaments adminitrés"
+        android:drawableRight="@drawable/medoc"/>
+    <EditText
+        android:id="@+id/duree"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="number"
+        android:hint="Durée de visite (en minute)"
+        android:drawableRight="@drawable/sablier"/>
+    <EditText
+        android:id="@+id/rdv"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="15dp"
+        android:inputType="date"
+        android:hint="Prochain rendez-vous"
+        android:drawableRight="@drawable/rdv"/>
+
+        <Button
+            android:id="@+id/enregistrer"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:text="Enregistrer"
+            android:layout_marginHorizontal="500dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+>>>>>>> parent of c229899 (Couleurs et btns top)
 
     </ScrollView>
 
