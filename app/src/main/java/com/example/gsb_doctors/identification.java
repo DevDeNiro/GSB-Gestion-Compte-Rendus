@@ -21,7 +21,6 @@ public class identification extends AppCompatActivity {
     Button btn;
     ProgressBar progressBar;
 
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
 
@@ -85,11 +84,5 @@ public class identification extends AppCompatActivity {
                     }
                 }
             });
-        }
-
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
         }
     }

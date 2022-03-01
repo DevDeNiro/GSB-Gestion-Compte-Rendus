@@ -52,7 +52,7 @@ class DataBase
         return $login;
     }
 
-    function signUp($table, $prenom, $nom, $naiss, $adresse, $tel, $email, $ante, $medic, $duree, $rdv)
+    function insertCompteRendu($table, $prenom, $nom, $naiss, $adresse, $tel, $email, $ante, $medic, $duree, $rdv)
     {
         $prenom = $this->prepareData($prenom);
         $nom = $this->prepareData($nom);
