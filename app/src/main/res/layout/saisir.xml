@@ -24,119 +24,47 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_height="150dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:gravity="center"
+                android:text="Saisir" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginTop="58dp">
+                android:text="Accueil" />
 
-                <Button
-                    android:text="Saisir"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginStart="5dp"
-                    android:backgroundTint="@color/teal_700"/>
-
-                <Button
-                    android:text="Accueil"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginHorizontal="5dp"/>
-
-                <Button
-                    android:text="Consulter"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginEnd="5dp"/>
-            </LinearLayout>
-
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Consulter" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/prenom"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="15dp"
-            android:drawableRight="@drawable/person"
-            android:hint="Prénom"
-            android:inputType="" />
+    </LinearLayout>
 
-        <EditText
-            android:id="@+id/nom"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="15dp"
-            android:drawableRight="@drawable/person2"
-            android:hint="Nom"
-            android:inputType="text" />
-
-        <EditText
-        android:id="@+id/naissance"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="date"
-        android:hint="Date de naissance"
-        android:drawableRight="@drawable/cake"/>
-    <EditText
-        android:id="@+id/adresse"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="text"
-        android:hint="Adresse"
-        android:drawableRight="@drawable/house"/>
-    <EditText
-        android:id="@+id/telephone"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="phone"
-        android:hint="Téléphone"
-        android:drawableRight="@drawable/phone"/>
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_marginTop="15dp"
-        android:inputType="textWebEmailAddress"
-        android:hint="Email"
-        android:drawableRight="@drawable/email"/>
-    <EditText
-        android:id="@+id/ante"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="59dp">
 
         <LinearLayout
             android:gravity="center_horizontal"
@@ -313,8 +241,6 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
         </LinearLayout>
-
-    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
