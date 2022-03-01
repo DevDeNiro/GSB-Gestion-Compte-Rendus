@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.GSBdoctors" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#45BA4A</item>
+        <item name="colorPrimary">#048B9A</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
