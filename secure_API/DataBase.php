@@ -72,4 +72,26 @@ class DataBase
             return true;
         } else return false;
     }
+
+    function getData(){
+        $tab = array();
+        
+        $sql = "SELECT prenom, nom, rdv FROM compterendu;";
+
+        $stmt->execute();
+        
+        $stmt->bind_result($prenom, $nom, $rdv);
+
+        while($stmt->fetch()) {
+            $temp = [
+                'prenom'=>$prenom,
+                'nom'=>$nom,
+                'rdv'=>$rdv
+            ];
+
+            array_push($tab, $temp);
+        }
+
+        echo json_encode($tab);
+    }
 }

@@ -15,6 +15,5 @@ class DataBaseConfig
         $this->username = 'root';
         $this->password = '';
         $this->databasename = 'gsb_doctor';
-
     }
 }
