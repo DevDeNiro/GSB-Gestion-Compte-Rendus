@@ -10,6 +10,8 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
+import android.widget.Button;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Menu;
@@ -24,7 +26,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class saisir extends AppCompatActivity {
 
     android.widget.EditText prenom, nom, naiss, adresse, telephone, email, ante, medicament, duree, rdv;
-    Button b1;
+    Button b0, b1, b2, b3;
     TextView enregistrer;
     ProgressBar progressBar;
 
@@ -34,7 +36,10 @@ public class saisir extends AppCompatActivity {
 
         setContentView(R.layout.saisir);
 
-        b1 = findViewById(R.id.enregistrer);
+        b0 = findViewById(R.id.enregistrer);
+        b1 = (Button) findViewById(R.id.bouton1);
+        b2 = (Button) findViewById(R.id.bouton2);
+        b3 = (Button) findViewById(R.id.bouton3);
         progressBar = findViewById(R.id.progress);
 
         prenom = findViewById(R.id.prenom);
@@ -48,7 +53,7 @@ public class saisir extends AppCompatActivity {
         duree = findViewById(R.id.duree);
         rdv = findViewById(R.id.rdv);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), identification.class);
@@ -57,7 +62,33 @@ public class saisir extends AppCompatActivity {
             }
         });
 
+        // ***************** Changement de page au clic *****************
+
         b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+                // Appel à la fonction openActivity pour changer de page (activity)
+                openActivity1();
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+                // Appel à la fonction openActivity pour changer de page (activity)
+                openActivity2();
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+                // Appel à la fonction openActivity pour changer de page (activity)
+                openActivity3();
+            }
+        });
+
+        b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -135,5 +166,23 @@ public class saisir extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void openActivity1(){
+        Intent saisir = new Intent(this, saisir.class);
+        startActivity(saisir);
+        finish();
+    }
+
+    public void openActivity2(){
+        Intent accueil = new Intent(this, accueil.class);
+        startActivity(accueil);
+        finish();
+    }
+
+    public void openActivity3(){
+        Intent consulter = new Intent(this, consulter.class);
+        startActivity(consulter);
+        finish();
     }
 }

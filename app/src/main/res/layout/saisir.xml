@@ -18,7 +18,7 @@
             android:gravity="center"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
-            android:text="@string/app_name"
+            android:text="GSB"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -42,6 +42,7 @@
                 android:layout_marginTop="57dp">
 
             <Button
+                android:id="@+id/bouton1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -52,6 +53,7 @@
                 style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
+                    android:id="@+id/bouton2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
@@ -61,6 +63,7 @@
                     tools:ignore="TextContrastCheck" />
 
                 <Button
+                    android:id="@+id/bouton3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"

@@ -1,6 +1,6 @@
 <resources>
     <string name="saisir">GSB-doctors | Saisir une fiche</string>
-    <string name="connecter">>GSB-doctors | Se connecter</string>
-    <string name="accueil">>GSB-doctors |Accueil</string>
-    <string name="Consulter">>GSB-doctors |Consulter</string>
+    <string name="connecter">GSB-doctors | Se connecter</string>
+    <string name="accueil">GSB-doctors | Accueil</string>
+    <string name="consulter">GSB-doctors | Consulter</string>
 </resources>
