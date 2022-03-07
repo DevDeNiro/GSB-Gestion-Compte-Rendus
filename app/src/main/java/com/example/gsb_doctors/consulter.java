@@ -151,10 +151,9 @@ public class consulter extends AppCompatActivity {
         String[] heroes = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
-            heroes[i] = obj.getString("nom");
+            heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
         listView.setAdapter(arrayAdapter);
     }
-
-    }
+}
