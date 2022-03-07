@@ -98,6 +98,13 @@ public class consulter extends AppCompatActivity {
         finish();
     }
 
+    public void openActivity4(int id){
+        Intent detail = new Intent(this, detail.class);
+        detail.putExtra("id", id);
+        startActivity(detail);
+        finish();
+    }
+
     @Override
     public void onBackPressed() {
         Intent intentBack = new Intent(this, saisir.class);
@@ -151,16 +158,24 @@ public class consulter extends AppCompatActivity {
         JSONArray jsonArray = new JSONArray(json);
         String[] heroes = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    if (i==0){
+                        openActivity4(i);
+                    }
+                    else {
+                        openActivity2();
+                    }
+                }
+            });
+
             JSONObject obj = jsonArray.getJSONObject(i);
             heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
         listView.setAdapter(arrayAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                openActivity1();
-            }
-        });
+
     }
 }
