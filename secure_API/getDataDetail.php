@@ -17,13 +17,16 @@
     else
         $id = null;
 
+        echo $id;
+
     $tab = array();
         
         $sql = "SELECT prenom, nom, rdv, id FROM compterendu where id = '$id'";
 
         $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        
+        $stmt->execute(array($id));
+
+
         $stmt->bind_result($prenom, $nom, $rdv, $id);
         while($stmt->fetch()) {
             $temp = [
