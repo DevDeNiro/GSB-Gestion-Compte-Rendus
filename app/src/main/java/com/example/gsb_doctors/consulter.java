@@ -99,8 +99,10 @@ public class consulter extends AppCompatActivity {
     }
 
     public void openActivity4(int id){
+        String id2 =Integer.toString(id);
+        String id1 = id2;
         Intent detail = new Intent(this, detail.class);
-        detail.putExtra("EXTRA_TEXT", id);
+        detail.putExtra("id1", id1);
         startActivity(detail);
         finish();
     }

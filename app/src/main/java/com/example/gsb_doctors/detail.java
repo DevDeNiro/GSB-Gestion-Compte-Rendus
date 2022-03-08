@@ -23,9 +23,15 @@ public class detail extends AppCompatActivity {
         setContentView(R.layout.detail);
 
         Intent intent = getIntent();
-        String text = intent.getStringExtra(Intent.EXTRA_TEXT);
+        String text = intent.getStringExtra("id1");
 
         System.out.println(text);
         };
 
+    @Override
+    public void onBackPressed() {
+        Intent intentBack = new Intent(this, consulter.class);
+        startActivity(intentBack);
+
+    }
     }
