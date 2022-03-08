@@ -99,7 +99,7 @@ public class consulter extends AppCompatActivity {
     }
 
     public void openActivity4(int id){
-        String id2 =Integer.toString(id);
+        String id2 = Integer.toString(id);
         String id1 = id2;
         Intent detail = new Intent(this, detail.class);
         detail.putExtra("id1", id1);
@@ -159,22 +159,20 @@ public class consulter extends AppCompatActivity {
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
         String[] heroes = new String[jsonArray.length()];
+        String[] get_id = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+            heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
+
+            get_id[i] = obj.getString("id");
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    if (i==0){
-                        openActivity4(i);
-                    }
-                    else {
-                        openActivity2();
-                    }
+                public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) {
+                    int get_id2 = Integer.parseInt(get_id[n]);
+                    openActivity4(get_id2);
                 }
             });
-
-            JSONObject obj = jsonArray.getJSONObject(i);
-            heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
         listView.setAdapter(arrayAdapter);
