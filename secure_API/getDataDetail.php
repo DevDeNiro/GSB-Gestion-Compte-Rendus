@@ -17,14 +17,12 @@
     else
         $id = null;
 
-        echo $id;
-
     $tab = array();
         
         $sql = "SELECT prenom, nom, rdv, id FROM compterendu where id = '$id'";
 
         $stmt = $conn->prepare($sql);
-        $stmt->execute(array($id));
+        $stmt->execute();
 
 
         $stmt->bind_result($prenom, $nom, $rdv, $id);
