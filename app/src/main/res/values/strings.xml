@@ -3,4 +3,5 @@
     <string name="connecter">GSB-doctors | Se connecter</string>
     <string name="accueil">GSB-doctors | Accueil</string>
     <string name="consulter">GSB-doctors | Consulter</string>
+    <string name="detail">GSB-doctors | Détail</string>
 </resources>

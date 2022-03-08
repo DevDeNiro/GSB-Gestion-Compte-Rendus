@@ -54,7 +54,7 @@
             android:name=".detail"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/consulter">
+            android:label="@string/detail">
         </activity>
 
     </application>
