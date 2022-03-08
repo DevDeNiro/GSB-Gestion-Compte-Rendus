@@ -93,7 +93,7 @@ public class detail extends AppCompatActivity {
             heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
-        listView.setAdapter(arrayAdapter);
+        //listView.setAdapter(arrayAdapter);
 
     }
 

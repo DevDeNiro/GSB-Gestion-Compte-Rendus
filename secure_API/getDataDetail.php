@@ -12,20 +12,19 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    if (isset($_POST['id']))
-        $id = $_POST['id'];
+    if (isset($_GET['id']))
+        $id = $_GET['id'];
     else
         $id = null;
 
     $tab = array();
         
-        $sql = "SELECT prenom, nom, rdv, id FROM compterendu where id = ".$id;
+        $sql = "SELECT prenom, nom, rdv, id FROM compterendu where id = '$id'";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         
         $stmt->bind_result($prenom, $nom, $rdv, $id);
-        echo $sql;
         while($stmt->fetch()) {
             $temp = [
                 'prenom'=>$prenom,
