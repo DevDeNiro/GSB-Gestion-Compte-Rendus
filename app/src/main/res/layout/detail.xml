@@ -62,13 +62,26 @@
             </LinearLayout>
 
 
-            <ListView
-                android:id="@+id/listView2"
+            <TextView
+                android:id="@+id/titre"
                 android:layout_width="match_parent"
-                android:layout_height="617dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true" />
+                android:gravity="center"
+                android:layout_height="35dp"
+                android:text="Prenom Nom"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_height="35dp"
+                android:text="Age"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
     </ScrollView>
