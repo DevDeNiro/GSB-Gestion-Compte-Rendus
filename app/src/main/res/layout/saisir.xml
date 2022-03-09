@@ -49,8 +49,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:gravity="center"
-                android:text="Saisir"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:text="Saisir"/>
 
                 <Button
                     android:id="@+id/bouton2"

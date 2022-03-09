@@ -36,6 +36,7 @@ public class detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail);
 
+        Button b0, b1, b2, b3;
         titre = (TextView) findViewById(R.id.titre);
         age = (TextView) findViewById(R.id.age);
 
@@ -44,9 +45,57 @@ public class detail extends AppCompatActivity {
 
         System.out.println(text);
 
-        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getDataDetail.php" + "?id=" + text;
+        String lien = "http://10.60.21.56/GSB_doctors/secure_API/getDataDetail.php" + "?id=" + text;
         getJSON(lien);
+
+        b1 = (Button) findViewById(R.id.bouton1);
+        b2 = (Button) findViewById(R.id.bouton2);
+        b3 = (Button) findViewById(R.id.bouton3);
+
+        // ***************** Changement de page au clic *****************
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+                // Appel à la fonction openActivity pour changer de page (activity)
+                openActivity1();
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+                // Appel à la fonction openActivity pour changer de page (activity)
+                openActivity2();
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v2) {
+                // Appel à la fonction openActivity pour changer de page (activity)
+                openActivity3();
+            }
+        });
     };
+
+    public void openActivity1(){
+        Intent saisir = new Intent(this, saisir.class);
+        startActivity(saisir);
+        finish();
+    }
+
+    public void openActivity2(){
+        Intent accueil = new Intent(this, accueil.class);
+        startActivity(accueil);
+        finish();
+    }
+
+    public void openActivity3(){
+        Intent consulter = new Intent(this, consulter.class);
+        startActivity(consulter);
+        finish();
+    }
 
     private void getJSON(final String urlWebService) {
 
@@ -102,7 +151,7 @@ public class detail extends AppCompatActivity {
         getAge = obj.getString("rdv");
 
         //getAge = year - 5;
-        
+
         titre.setText(getNomPrenom);
         age.setText(getAge);
 
