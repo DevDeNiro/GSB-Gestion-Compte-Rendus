@@ -76,7 +76,7 @@ public class consulter extends AppCompatActivity {
             }
         });
 
-        getJSON("http://10.60.21.56/GSB_doctors/secure_API/getData.php");
+        getJSON("http://192.168.1.16/GSB_doctors/secure_API/getData.php");
 
         }
 
