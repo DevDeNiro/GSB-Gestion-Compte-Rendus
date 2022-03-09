@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,21 +29,26 @@ import java.net.URL;
 
 public class detail extends AppCompatActivity {
 
-
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail);
+
+        listView = (ListView) findViewById(R.id.listView2);
 
         Intent intent = getIntent();
         String text = intent.getStringExtra("id1");
 
         System.out.println(text);
 
-        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getDataDetail.php?id=text");
-        };
+        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getDataDetail.php" + "?id=" + text;
+        getJSON(lien);
+    };
 
     private void getJSON(final String urlWebService) {
+
+        System.out.println(urlWebService);
 
         class GetJSON extends AsyncTask<Void, Void, String> {
 
@@ -87,13 +93,12 @@ public class detail extends AppCompatActivity {
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
         String[] heroes = new String[jsonArray.length()];
-        String[] get_id = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
             heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
-        //listView.setAdapter(arrayAdapter);
+        listView.setAdapter(arrayAdapter);
 
     }
 
@@ -103,4 +108,4 @@ public class detail extends AppCompatActivity {
         startActivity(intentBack);
 
     }
-    }
+}
