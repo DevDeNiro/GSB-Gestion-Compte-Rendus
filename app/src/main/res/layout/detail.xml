@@ -64,7 +64,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:textSize="20sp"/>
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/nom"
@@ -72,8 +73,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="10dp"/>
+                        android:textSize="26sp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -93,15 +95,19 @@
 
                         <TextView
                             android:drawableRight="@drawable/cake"
-                            android:hint="Date de naissance"
+                            android:text="Date de naissance"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/naiss"
                             android:layout_width="150dp"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
 
                     </LinearLayout>
 
@@ -115,15 +121,19 @@
 
                         <TextView
                             android:drawableRight="@drawable/house"
-                            android:hint="Adresse"
+                            android:text="Adresse"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/adresse"
                             android:layout_width="150dp"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
 
                     </LinearLayout>
 
@@ -145,15 +155,19 @@
 
                             <TextView
                                 android:drawableRight="@drawable/phone"
-                                android:hint="Téléphone"
+                                android:text="Téléphone"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
-                                android:gravity="center"/>
+                                android:gravity="center"
+                                android:fontFamily="@font/poppinsbold"
+                                android:textSize="13sp"
+                                android:textColor="@color/black"/>
 
                             <TextView
                                 android:id="@+id/tel"
                                 android:layout_width="150dp"
-                                android:layout_height="40dp"/>
+                                android:layout_height="40dp"
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -167,15 +181,19 @@
 
                             <TextView
                                 android:drawableRight="@drawable/email"
-                                android:hint="E-mail"
+                                android:text="E-mail"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
-                                android:gravity="center"/>
+                                android:gravity="center"
+                                android:fontFamily="@font/poppinsbold"
+                                android:textSize="13sp"
+                                android:textColor="@color/black"/>
 
                             <TextView
                                 android:id="@+id/email"
                                 android:layout_width="150dp"
-                                android:layout_height="40dp"/>
+                                android:layout_height="40dp"
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -196,15 +214,19 @@
 
                         <TextView
                             android:drawableRight="@drawable/ante"
-                            android:hint="Antécédants médicaux"
+                            android:text="Antécédants médicaux"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/ante"
                             android:layout_width="150dp"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
 
                     </LinearLayout>
 
@@ -218,15 +240,19 @@
 
                         <TextView
                             android:drawableRight="@drawable/medoc"
-                            android:hint="Médicaments adminitrés"
+                            android:text="Médicaments adminitrés"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/medicament"
                             android:layout_width="150dp"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -246,15 +272,19 @@
 
                         <TextView
                             android:drawableRight="@drawable/sablier"
-                            android:hint="Durée de la visite"
+                            android:text="Durée de la visite"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/duree"
                             android:layout_width="150dp"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
 
                     </LinearLayout>
 
@@ -268,15 +298,19 @@
 
                         <TextView
                             android:drawableRight="@drawable/rdv"
-                            android:hint="Date du rendez-vous"
+                            android:text="Date du rendez-vous"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/rdv"
                             android:layout_width="150dp"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
 
