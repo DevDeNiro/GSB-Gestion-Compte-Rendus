@@ -25,20 +25,20 @@
         $stmt->execute();
 
 
-        $stmt->bind_result($prenom, $nom, $rdv, $id, $naiss, $adresse, $tel, $email, $ante, $medic, $duree);
+        $stmt->bind_result($id, $prenom, $nom, $naiss, $adresse, $tel, $email, $ante, $medic, $duree, $rdv);
         while($stmt->fetch()) {
             $temp = [
+                'id'=>$id,
                 'prenom'=>$prenom,
                 'nom'=>$nom,
-                'rdv'=>$rdv,
-                'id'=>$id,
-                'naiss'=>$naiss,
+                'naiss'=>$naiss,               
                 'adresse'=>$adresse,
                 'tel'=>$tel,
                 'email'=>$email,
                 'ante'=>$ante,
                 'medic'=>$medic,
-                'duree'=>$duree
+                'duree'=>$duree,
+                'rdv'=>$rdv
             ];
 
             array_push($tab, $temp);
