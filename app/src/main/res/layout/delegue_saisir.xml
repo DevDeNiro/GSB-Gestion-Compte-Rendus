@@ -64,104 +64,18 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_marginTop="10dp"
                 android:gravity="center">
 
                 <EditText
-                    android:id="@+id/prenom"
+                    android:id="@+id/titre"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/person"
-                    android:hint="Prénom"
-                    android:inputType=""
-                    android:minHeight="48dp"
-                    android:autofillHints="" />
-
-                <EditText
-                    android:id="@+id/nom"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/person2"
-                    android:hint="Nom"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:autofillHints="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/naissance"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/cake"
-                    android:hint="Date de naissance"
-                    android:inputType="date"
-                    android:minHeight="48dp" />
-
-                <EditText
-                    android:id="@+id/adresse"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/house"
-                    android:hint="Adresse"
-                    android:inputType="text"
-                    android:minHeight="48dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center">
-
-
-                <EditText
-                    android:id="@+id/telephone"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/phone"
-                    android:hint="Téléphone"
-                    android:inputType="phone"
-                    android:minHeight="48dp" />
-
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/email"
-                    android:hint="Email"
-                    android:inputType="textWebEmailAddress"
-                    android:minHeight="48dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center">
-
-                <EditText
-                    android:id="@+id/ante"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/ante"
-                    android:hint="Antécédants médicaux"
+                    android:drawableRight="@drawable/ic_title"
+                    android:hint="Titre"
                     android:inputType=""
                     android:minHeight="48dp" />
+
 
                 <EditText
                     android:id="@+id/medicament"
@@ -199,6 +113,34 @@
                     android:drawableRight="@drawable/rdv"
                     android:hint="Prochain rendez-vous"
                     android:inputType="date"
+                    android:minHeight="48dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/ante"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:drawableRight="@drawable/ante"
+                    android:hint="Antécédants médicaux"
+                    android:inputType=""
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/prix"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:drawableRight="@drawable/ic_euro"
+                    android:hint="Prix total"
+                    android:inputType="number"
                     android:minHeight="48dp" />
 
             </LinearLayout>

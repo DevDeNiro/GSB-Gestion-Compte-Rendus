@@ -8,7 +8,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -79,125 +80,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:gravity="center">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="150dp"
-                        android:layout_height="80dp"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center">
-
-                        <TextView
-                            android:drawableRight="@drawable/cake"
-                            android:text="Date de naissance"
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"
-                            android:fontFamily="@font/poppinsbold"
-                            android:textSize="13sp"
-                            android:textColor="@color/black"/>
-
-                        <TextView
-                            android:id="@+id/naiss"
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="150dp"
-                        android:layout_height="80dp"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center">
-
-                        <TextView
-                            android:drawableRight="@drawable/house"
-                            android:text="Adresse"
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"
-                            android:fontFamily="@font/poppinsbold"
-                            android:textSize="13sp"
-                            android:textColor="@color/black"/>
-
-                        <TextView
-                            android:id="@+id/adresse"
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:gravity="center">
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="150dp"
-                            android:layout_height="80dp"
-                            android:layout_marginHorizontal="15dp"
-                            android:layout_marginTop="10dp"
-                            >
-
-                            <TextView
-                                android:drawableRight="@drawable/phone"
-                                android:text="Téléphone"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:gravity="center"
-                                android:fontFamily="@font/poppinsbold"
-                                android:textSize="13sp"
-                                android:textColor="@color/black"/>
-
-                            <TextView
-                                android:id="@+id/tel"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:gravity="center"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="150dp"
-                            android:layout_height="80dp"
-                            android:layout_marginHorizontal="15dp"
-                            android:layout_marginTop="10dp"
-                            >
-
-                            <TextView
-                                android:drawableRight="@drawable/email"
-                                android:text="E-mail"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:gravity="center"
-                                android:fontFamily="@font/poppinsbold"
-                                android:textSize="13sp"
-                                android:textColor="@color/black"/>
-
-                            <TextView
-                                android:id="@+id/email"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:gravity="center"/>
-
-                        </LinearLayout>
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -213,8 +95,8 @@
                         android:layout_marginTop="10dp">
 
                         <TextView
-                            android:drawableRight="@drawable/ante"
-                            android:text="Antécédants médicaux"
+                            android:drawableRight="@drawable/ic_title"
+                            android:text="Titre"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:gravity="center"
@@ -223,7 +105,7 @@
                             android:textColor="@color/black"/>
 
                         <TextView
-                            android:id="@+id/ante"
+                            android:id="@+id/titre"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:gravity="center"/>
@@ -267,8 +149,7 @@
                         android:layout_width="150dp"
                         android:layout_height="80dp"
                         android:layout_marginHorizontal="15dp"
-                        android:layout_marginTop="10dp"
-                        >
+                        android:layout_marginTop="10dp">
 
                         <TextView
                             android:drawableRight="@drawable/sablier"
@@ -308,6 +189,64 @@
 
                         <TextView
                             android:id="@+id/rdv"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:drawableRight="@drawable/ante"
+                            android:text="Antécédants médicaux"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/ante"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:drawableRight="@drawable/ic_euro"
+                            android:text="Prix total"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/prix"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:gravity="center"/>

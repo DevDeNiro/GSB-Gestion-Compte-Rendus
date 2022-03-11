@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/bouton1"
+                        android:text="Saisir"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginStart="5dp"/>
+
+                    <Button
+                        android:id="@+id/bouton2"
+                        android:text="Accueil"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"/>
+
+                    <Button
+                        android:id="@+id/bouton3"
+                        android:text="Consulter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:backgroundTint="@color/teal_700"/>
+                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/prenom"
+                        android:text="Prénom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/nom"
+                        android:text="Nom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:drawableRight="@drawable/ic_title"
+                            android:text="Titre"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/titre"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:drawableRight="@drawable/medoc"
+                            android:text="Médicaments adminitrés"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/medicament"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:drawableRight="@drawable/sablier"
+                            android:text="Durée de la visite"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/duree"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:drawableRight="@drawable/rdv"
+                            android:text="Date du rendez-vous"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/rdv"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:drawableRight="@drawable/ante"
+                            android:text="Antécédants médicaux"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/ante"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <TextView
+                            android:drawableRight="@drawable/ic_euro"
+                            android:text="Prix total"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppinsbold"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/prix"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,20 +3,12 @@ package com.example.gsb_doctors;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +18,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.Year;
 
 public class detail extends AppCompatActivity {
 
@@ -34,15 +25,11 @@ public class detail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detail);
+        setContentView(R.layout.visiteur_detail);
 
         Button b0, b1, b2, b3;
         prenom = (TextView) findViewById(R.id.prenom);
         nom = (TextView) findViewById(R.id.nom);
-        naiss = (TextView) findViewById(R.id.naiss);
-        adresse = (TextView) findViewById(R.id.adresse);
-        tel = (TextView) findViewById(R.id.tel);
-        email = (TextView) findViewById(R.id.email);
         ante = (TextView) findViewById(R.id.ante);
         medicament = (TextView) findViewById(R.id.medicament);
         duree = (TextView) findViewById(R.id.duree);
