@@ -72,4 +72,16 @@ class DataBase
             return true;
         } else return false;
     }
+
+    function signUp($table, $pseudo, $mdp)
+    {
+        $pseudo = $this->prepareData($pseudo);
+        $mdp = $this->prepareData($mdp);
+        $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+        $this->sql =
+            "INSERT INTO " . $table . " (pseudo, mdp) VALUES ('" . $pseudo . "','" . $mdp . "')";
+        if (mysqli_query($this->connect, $this->sql)) {
+            return true;
+        } else return false;
+    }
 }
