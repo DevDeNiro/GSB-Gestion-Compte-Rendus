@@ -25,7 +25,7 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 
-$stmt->bind_result($id, $title, $medic, $duree, $rdv, $ante, $price);
+$stmt->bind_result($id, $title, $medic, $duree, $rdv, $ante, $prix);
 while ($stmt->fetch()) {
     $temp = [
         'id' => $id,
@@ -34,7 +34,7 @@ while ($stmt->fetch()) {
         'duree' => $duree,
         'rdv' => $rdv,
         'ante' => $ante,
-        'price' => $price,
+        'prix' => $prix,
     ];
 
     array_push($tab, $temp);
