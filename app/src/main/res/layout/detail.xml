@@ -116,7 +116,7 @@
 
                         <TextView
                             android:drawableRight="@drawable/house"
-                            android:hint="adresse"
+                            android:hint="Adresse"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:gravity="center"/>
@@ -269,7 +269,7 @@
 
                         <TextView
                             android:drawableRight="@drawable/rdv"
-                            android:hint="Prochain rendez-vous"
+                            android:hint="Date du rendez-vous"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:gravity="center"/>
