@@ -19,19 +19,26 @@
 
     $tab = array();
         
-        $sql = "SELECT prenom, nom, rdv, id FROM compterendu where id = '$id'";
+        $sql = "SELECT * FROM compterendu where id = '$id'";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
 
-        $stmt->bind_result($prenom, $nom, $rdv, $id);
+        $stmt->bind_result($prenom, $nom, $rdv, $id, $naiss, $adresse, $tel, $email, $ante, $medic, $duree);
         while($stmt->fetch()) {
             $temp = [
                 'prenom'=>$prenom,
                 'nom'=>$nom,
                 'rdv'=>$rdv,
-                'id'=>$id
+                'id'=>$id,
+                'naiss'=>$naiss,
+                'adresse'=>$adresse,
+                'tel'=>$tel,
+                'email'=>$email,
+                'ante'=>$ante,
+                'medic'=>$medic,
+                'duree'=>$duree
             ];
 
             array_push($tab, $temp);
