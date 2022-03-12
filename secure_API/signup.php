@@ -8,4 +8,3 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         } else echo "Sign up Failed";
     } else echo "Error: Database connection";
 } else echo "All fields are required";
-?>

@@ -11,7 +11,8 @@ class DataBase
     protected $password;
     protected $databasename;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->connect = null;
         $this->data = null;
         $this->sql = null;
@@ -22,16 +23,19 @@ class DataBase
         $this->databasename = $dbc->databasename;
     }
 
-    function dbConnect(){
+    function dbConnect()
+    {
         $this->connect = mysqli_connect($this->servername, $this->username, $this->password, $this->databasename);
         return $this->connect;
     }
 
-    function prepareData($data){
+    function prepareData($data)
+    {
         return mysqli_real_escape_string($this->connect, stripslashes(htmlspecialchars($data)));
     }
 
-    function logIn($table, $pseudo, $password){
+    function logIn($table, $pseudo, $password)
+    {
         $pseudo = $this->prepareData($pseudo);
         $password = $this->prepareData($password);
         $this->sql = "select * from " . $table . " where pseudo = '" . $pseudo . "'";
@@ -48,7 +52,8 @@ class DataBase
         return $login;
     }
 
-    function insertCompteRendu($table, $prenom, $nom, $naiss, $adresse, $tel, $email, $ante, $medic, $duree, $rdv){
+    function insertCompteRendu($table, $prenom, $nom, $naiss, $adresse, $tel, $email, $ante, $medic, $duree, $rdv)
+    {
         $prenom = $this->prepareData($prenom);
         $nom = $this->prepareData($nom);
         $naiss = $this->prepareData($naiss);
@@ -68,7 +73,8 @@ class DataBase
         } else return false;
     }
 
-    function visiteurInsertCompteRendu($table, $medic, $duree, $rdv, $titre, $prix, $region){
+    function visiteurInsertCompteRendu($table, $medic, $duree, $rdv, $titre, $prix, $region)
+    {
         $medic = $this->prepareData($medic);
         $duree = $this->prepareData($duree);
         $rdv = $this->prepareData($rdv);
@@ -84,7 +90,8 @@ class DataBase
         } else return false;
     }
 
-    function signUp($table, $pseudo, $mdp){
+    function signUp($table, $pseudo, $mdp)
+    {
         $pseudo = $this->prepareData($pseudo);
         $mdp = $this->prepareData($mdp);
         $mdp = password_hash($mdp, PASSWORD_DEFAULT);
