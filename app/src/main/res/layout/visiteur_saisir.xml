@@ -123,15 +123,6 @@
                 android:layout_height="80dp"
                 android:gravity="center">
 
-                <EditText
-                    android:id="@+id/ante"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:drawableRight="@drawable/ante"
-                    android:hint="Antécédants médicaux"
-                    android:inputType=""
-                    android:minHeight="48dp" />
 
                 <EditText
                     android:id="@+id/prix"

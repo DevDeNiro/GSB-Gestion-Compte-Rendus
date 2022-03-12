@@ -88,9 +88,9 @@ public class saisir extends AppCompatActivity {
                 Titre = String.valueOf(titre.getText());
 
                 // Verification of the type of the value entered in the EditText
-                if (!Medic.equals("") && !Duree.equals("") && !Rdv.equals("") && !Prix.equals("")) {
+                if (!Medic.equals("") && !Duree.equals("") && !Rdv.equals("") && !Prix.equals("") && !Region.equals("") && !Titre.equals("")) {
                     //Start ProgressBar first (Set visibility VISIBLE)
-                    progressBar.setVisibility(View.VISIBLE);
+
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
@@ -117,7 +117,6 @@ public class saisir extends AppCompatActivity {
                             PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
-                                    progressBar.setVisibility(View.GONE);
 
                                     String result = putData.getResult();
 
