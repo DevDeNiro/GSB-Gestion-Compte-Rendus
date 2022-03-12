@@ -16,7 +16,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class saisir extends AppCompatActivity {
 
-    android.widget.EditText prenom, nom, naiss, adresse, telephone, email, ante, medicament, duree, rdv;
+    android.widget.EditText medicament, duree, rdv, prix, titre;
     Button b0, b1, b2, b3;
     TextView enregistrer;
     ProgressBar progressBar;
@@ -33,16 +33,11 @@ public class saisir extends AppCompatActivity {
         b3 = (Button) findViewById(R.id.bouton3);
         progressBar = findViewById(R.id.progress);
 
-        prenom = findViewById(R.id.prenom);
-        nom = findViewById(R.id.nom);
-        naiss = findViewById(R.id.naissance);
-        adresse = findViewById(R.id.adresse);
-        telephone = findViewById(R.id.telephone);
-        email = findViewById(R.id.email);
-        ante = findViewById(R.id.ante);
+        prix = findViewById(R.id.prix);
         medicament = findViewById(R.id.medicament);
         duree = findViewById(R.id.duree);
         rdv = findViewById(R.id.rdv);
+        titre = findViewById(R.id.titre);
 
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,20 +78,17 @@ public class saisir extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Prenom, Nom, Naiss, Adresse, Tel, Email, Ante, Medic, Duree, Rdv;
-                Prenom = String.valueOf(prenom.getText());
-                Nom = String.valueOf(nom.getText());
-                Naiss = String.valueOf(naiss.getText());
-                Adresse = String.valueOf(adresse.getText());
-                Tel = String.valueOf(telephone.getText());
-                Email = String.valueOf(email.getText());
-                Ante = String.valueOf(ante.getText());
+                String Medic, Duree, Rdv, Prix, Titre, Region;
+
+                Prix = String.valueOf(prix.getText());
                 Medic = String.valueOf(medicament.getText());
                 Duree = String.valueOf(duree.getText());
                 Rdv = String.valueOf(rdv.getText());
+                Region = "Région";
+                Titre = String.valueOf(titre.getText());
 
                 // Verification of the type of the value entered in the EditText
-                if (!Prenom.equals("") && !Nom.equals("") && !Naiss.equals("") && !Adresse.equals("") && !Tel.equals("") && !Email.equals("") && !Ante.equals("") && !Medic.equals("") && !Duree.equals("") && !Rdv.equals("")) {
+                if (!Medic.equals("") && !Duree.equals("") && !Rdv.equals("") && !Prix.equals("")) {
                     //Start ProgressBar first (Set visibility VISIBLE)
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
@@ -105,32 +97,24 @@ public class saisir extends AppCompatActivity {
                         public void run() {
                             //Starting Write and Read data with URL
                             //Creating array for parameters
-                            String[] field = new String[10];
-                            field[0] = "prenom";
-                            field[1] = "nom";
-                            field[2] = "naiss";
-                            field[3] = "adresse";
-                            field[4] = "tel";
-                            field[5] = "email";
-                            field[6] = "ante";
-                            field[7] = "medic";
-                            field[8] = "duree";
-                            field[9] = "rdv";
+                            String[] field = new String[6];
+                            field[0] = "prix";
+                            field[1] = "medic";
+                            field[2] = "duree";
+                            field[3] = "rdv";
+                            field[4] = "titre";
+                            field[5] = "region";
 
                             //Creating array for data
-                            String[] data = new String[10];
-                            data[0] = Prenom;
-                            data[1] = Nom;
-                            data[2] = Naiss;
-                            data[3] = Adresse;
-                            data[4] = Tel;
-                            data[5] = Email;
-                            data[6] = Ante;
-                            data[7] = Medic;
-                            data[8] = Duree;
-                            data[9] = Rdv;
+                            String[] data = new String[6];
+                            data[0] = Prix;
+                            data[1] = Medic;
+                            data[2] = Duree;
+                            data[3] = Rdv;
+                            data[4] = Titre;
+                            data[5] = Region;
 
-                            PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/insertCompteRendu.php", "POST", field, data);  // Mettre son ip
+                            PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
