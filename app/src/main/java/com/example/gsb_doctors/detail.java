@@ -40,7 +40,7 @@ public class detail extends AppCompatActivity {
 
         System.out.println(text);
 
-        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getDataDetail.php" + "?id=" + text;
+        String lien = "http://192.168.1.16/GSB_doctors/secure_API/getDataDetail.php" + "?id=" + text;
         getJSON(lien);
 
         b1 = (Button) findViewById(R.id.bouton1);

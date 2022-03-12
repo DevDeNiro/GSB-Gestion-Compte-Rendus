@@ -114,7 +114,7 @@ public class saisir extends AppCompatActivity {
                             data[4] = Titre;
                             data[5] = Region;
 
-                            PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
+                            PutData putData = new PutData("http://192.168.1.16/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
 
