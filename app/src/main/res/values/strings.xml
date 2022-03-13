@@ -1,7 +1,9 @@
 <resources>
     <string name="saisir">GSB-doctors | Saisir une fiche</string>
     <string name="connecter">GSB-doctors | Se connecter</string>
-    <string name="accueil">GSB-doctors | Accueil</string>
+    <string name="medecin">GSB-doctors | Liste médecin</string>
     <string name="consulter">GSB-doctors | Consulter</string>
     <string name="detail">GSB-doctors | Détail</string>
+    <string name="compte">GSB-doctors | Compte-rendu</string>
+    <string name="stat">GSB-doctors | Statistique</string>
 </resources>

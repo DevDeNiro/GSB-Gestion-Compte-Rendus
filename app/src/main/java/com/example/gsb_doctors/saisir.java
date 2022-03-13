@@ -127,7 +127,7 @@ public class saisir extends AppCompatActivity {
 
                                     if (result.equals("Sign Up Success")) {
                                         Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
-                                        Intent accueil = new Intent(getApplicationContext(), accueil.class);
+                                        Intent accueil = new Intent(getApplicationContext(), visiteur_medecin.class);
                                         startActivity(accueil);
                                         finish();
                                     } else {
@@ -154,7 +154,7 @@ public class saisir extends AppCompatActivity {
     }
 
     public void openActivity2(){
-        Intent accueil = new Intent(this, accueil.class);
+        Intent accueil = new Intent(this, visiteur_medecin.class);
         startActivity(accueil);
         finish();
     }

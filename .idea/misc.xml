@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/oldon/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/oldon/StudioProjects/GSB_doctors/app/src/main/res/layout/login_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/oldon/StudioProjects/GSBdoctors/app/src/main/res/layout/fragment_main.xml" value="0.23550724637681159" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/accueil.xml" value="0.287962962962963" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/consulter.xml" value="0.36666666666666664" />
-        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/delegue_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/delegue_accueil.xml" value="0.36666666666666664" />
+        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/delegue_consulter.xml" value="0.36666666666666664" />
+        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/delegue_saisir.xml" value="0.36666666666666664" />
+        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/delegue_statistique.xml" value="0.36666666666666664" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/detail.xml" value="0.33" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/fragment_main.xml" value="0.36666666666666664" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/inscription.xml" value="0.36666666666666664" />
@@ -18,7 +20,8 @@
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/visiteur_accueil.xml" value="0.36666666666666664" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/visiteur_consulter.xml" value="0.36666666666666664" />
         <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/visiteur_detail.xml" value="0.36666666666666664" />
-        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/visiteur_saisir.xml" value="0.36666666666666664" />
+        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/visiteur_medecin.xml" value="0.36666666666666664" />
+        <entry key="..\:/wamp64/www/GSB_doctors/app/src/main/res/layout/visiteur_saisir.xml" value="0.36102564102564105" />
       </map>
     </option>
   </component>

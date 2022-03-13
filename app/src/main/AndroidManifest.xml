@@ -39,15 +39,13 @@
             android:exported="true"
             tools:ignore="Instantiatable"
             android:label="@string/connecter">
-
-
         </activity>
 
         <activity
-            android:name=".accueil"
+            android:name=".visiteur_medecin"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/accueil">
+            android:label="@string/medecin">
         </activity>
 
         <activity
@@ -62,6 +60,20 @@
             android:exported="true"
             tools:ignore="Instantiatable"
             android:label="@string/detail">
+        </activity>
+
+        <activity
+            android:name=".delegue_compteRendu"
+            android:exported="true"
+            tools:ignore="Instantiatable"
+            android:label="@string/compte">
+        </activity>
+
+        <activity
+            android:name=".delegue_statistique"
+            android:exported="true"
+            tools:ignore="Instantiatable"
+            android:label="@string/stat">
         </activity>
 
     </application>

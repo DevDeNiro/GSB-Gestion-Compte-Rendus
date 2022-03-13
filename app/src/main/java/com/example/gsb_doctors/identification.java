@@ -110,12 +110,12 @@ public class identification extends AppCompatActivity {
                                                 Toast.makeText(getApplicationContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
 
                                                 switch (get_role[0]) {
-                                                    case "delegue":
-                                                        Intent intent = new Intent(getApplicationContext(), saisir.class);
+                                                    case "deledgfgue":
+                                                        Intent intent = new Intent(getApplicationContext(), delegue_compteRendu.class);
                                                         startActivity(intent);
                                                         break;
-                                                    case "visiteur":
-                                                        Intent intent2 = new Intent(getApplicationContext(), accueil.class);
+                                                    case "delegue":
+                                                        Intent intent2 = new Intent(getApplicationContext(), saisir.class);
                                                         startActivity(intent2);
                                                         break;
                                                 }

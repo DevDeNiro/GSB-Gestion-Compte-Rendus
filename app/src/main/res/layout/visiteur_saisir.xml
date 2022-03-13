@@ -30,34 +30,33 @@
                 android:layout_height="50dp"
                 android:gravity="center">
 
-            <Button
-                android:id="@+id/bouton1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_700"
-                android:gravity="center"
-                android:text="Saisir"/>
-
-                <Button
-                    android:id="@+id/bouton2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Accueil"
-                    tools:ignore="TextContrastCheck" />
-
                 <Button
                     android:id="@+id/bouton3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Consulter"/>
+
+                <Button
+                    android:id="@+id/bouton1"
+                    android:text="Saisir"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:backgroundTint="@color/teal_700"
+                    android:layout_marginHorizontal="5dp"/>
+
+                <Button
+                    android:id="@+id/bouton2"
+                    android:text="Médecin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginEnd="5dp"/>
         </LinearLayout>
 
             <LinearLayout

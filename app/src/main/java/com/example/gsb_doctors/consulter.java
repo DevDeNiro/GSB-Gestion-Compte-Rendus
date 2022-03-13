@@ -73,7 +73,7 @@ public class consulter extends AppCompatActivity {
     }
 
     public void openActivity2(){
-        Intent accueil = new Intent(this, accueil.class);
+        Intent accueil = new Intent(this, visiteur_medecin.class);
         startActivity(accueil);
         finish();
     }

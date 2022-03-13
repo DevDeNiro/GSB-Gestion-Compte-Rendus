@@ -70,7 +70,7 @@ public class inscription extends AppCompatActivity {
 
                   if (result.equals("Sign Up Success")) {
                     Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                    Intent identification = new Intent(getApplicationContext(), accueil.class);
+                    Intent identification = new Intent(getApplicationContext(), visiteur_medecin.class);
                     startActivity(identification);
                     finish();
                   } else {
