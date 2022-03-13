@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -13,6 +14,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class identification extends AppCompatActivity {
@@ -64,10 +69,34 @@ public class identification extends AppCompatActivity {
                                     if (putData.onComplete()) {
                                         progressBar.setVisibility(View.GONE);
 
-                                         String result = putData.getResult();
+                                        String result = putData.getResult();
 
-                                        if (result.equals("Login Success")) {
-                                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        JSONArray jsonArray = null;
+                                        try {
+                                            jsonArray = new JSONArray(result);
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                        String[] get_login = new String[jsonArray.length()];
+                                        String[] get_region = new String[jsonArray.length()];
+
+                                        for (int i = 0; i < jsonArray.length(); i++) {
+                                            JSONObject obj = null;
+                                            try {
+                                                obj = jsonArray.getJSONObject(i);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                            try {
+                                                get_login[i] = obj.getString("login");
+                                                get_region[i] = obj.getString("region");
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+
+                                        if (get_login[0].equals("Login Success")) {
+                                            Toast.makeText(getApplicationContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
                                             Intent home = new Intent(getApplicationContext(), accueil.class);
                                             startActivity(home);
                                             finish();

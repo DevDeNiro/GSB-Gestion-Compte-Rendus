@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 $tab = array();
 
-$sql = "SELECT prenom, nom, rdv, id FROM compterendu;";
+$sql = "SELECT prenom, nom, rdv, id FROM compte_rendu;";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
