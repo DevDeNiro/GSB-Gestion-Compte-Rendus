@@ -27,6 +27,8 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         //     array_push($tab, $temp);
         //     echo json_encode($tab);
         //     } 
-        else echo "Pseudo or Password wrong";
+        else {
+            echo "Pseudo or Password wrong";
+        }
     } else echo "Error: Database connection";
 } else echo "All fields are required";

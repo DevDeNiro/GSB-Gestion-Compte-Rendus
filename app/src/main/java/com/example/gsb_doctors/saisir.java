@@ -40,6 +40,10 @@ public class saisir extends AppCompatActivity {
         rdv = findViewById(R.id.rdv);
         titre = findViewById(R.id.titre);
 
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
+        String get_region = prefs.getString("region1", "Aucun");
+        System.out.println(get_region);
+
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +89,7 @@ public class saisir extends AppCompatActivity {
                 Medic = String.valueOf(medicament.getText());
                 Duree = String.valueOf(duree.getText());
                 Rdv = String.valueOf(rdv.getText());
-                Region = "Région";
+                Region = get_region;
                 Titre = String.valueOf(titre.getText());
 
                 // Verification of the type of the value entered in the EditText
@@ -122,7 +126,7 @@ public class saisir extends AppCompatActivity {
                                     String result = putData.getResult();
 
                                     if (result.equals("Sign Up Success")) {
-                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
                                         Intent accueil = new Intent(getApplicationContext(), accueil.class);
                                         startActivity(accueil);
                                         finish();
@@ -137,13 +141,10 @@ public class saisir extends AppCompatActivity {
                     });
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "All fields required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Tous les champs sont requis", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
-        String get_region = prefs.getString("region1", "Aucun");
-        System.out.println(get_region);
     }
 
     public void openActivity1(){
