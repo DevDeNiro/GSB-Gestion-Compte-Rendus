@@ -1,6 +1,8 @@
 package com.example.gsb_doctors;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -96,6 +98,10 @@ public class identification extends AppCompatActivity {
                                         }
 
                                         if (get_login[0].equals("Login Success")) {
+                                            SharedPreferences sharedpreferences = getSharedPreferences("region", Context.MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                                            editor.putString("region1", get_region[0]);
+                                            editor.commit();
                                             Toast.makeText(getApplicationContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
                                             Intent home = new Intent(getApplicationContext(), accueil.class);
                                             startActivity(home);

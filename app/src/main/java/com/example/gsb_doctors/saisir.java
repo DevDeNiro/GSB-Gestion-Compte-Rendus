@@ -1,6 +1,7 @@
 package com.example.gsb_doctors;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -140,6 +141,9 @@ public class saisir extends AppCompatActivity {
                 }
             }
         });
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
+        String get_region = prefs.getString("region1", "Aucun");
+        System.out.println(get_region);
     }
 
     public void openActivity1(){
