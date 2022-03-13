@@ -112,4 +112,15 @@ class DataBase
         }
         return $region;
     }
+
+    function getRole($table, $pseudo){
+        $pseudo = $this->prepareData($pseudo);
+        $this->sql = "select role from " . $table . " where pseudo = '" . $pseudo . "'";
+        $result = mysqli_query($this->connect, $this->sql);
+        $row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) != 0) {
+            $role = $row['role'];
+        }
+        return $role;
+    }
 }

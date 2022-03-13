@@ -8,10 +8,12 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         // }
         if ($db->logIn("doctor", $_POST['pseudo'], $_POST['mdp'])) {
             $region = $db->getRegion("doctor", $_POST['pseudo']);
+            $role = $db->getRole("doctor", $_POST['pseudo']);
             $tab = array();
             $temp = [
                 'login' => "Login Success",
-                'region' => $region
+                'region' => $region,
+                'role' => $role
             ];
             array_push($tab, $temp);
             echo json_encode($tab);

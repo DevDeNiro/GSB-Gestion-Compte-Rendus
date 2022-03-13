@@ -81,6 +81,7 @@ public class identification extends AppCompatActivity {
                                         }
                                         String[] get_login = new String[jsonArray.length()];
                                         String[] get_region = new String[jsonArray.length()];
+                                        String[] get_role = new String[jsonArray.length()];
 
                                         for (int i = 0; i < jsonArray.length(); i++) {
                                             JSONObject obj = null;
@@ -92,20 +93,33 @@ public class identification extends AppCompatActivity {
                                             try {
                                                 get_login[i] = obj.getString("login");
                                                 get_region[i] = obj.getString("region");
+                                                get_role[i] = obj.getString("role");
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
                                         }
 
                                         if (get_login[0].equals("Login Success")) {
+                                            System.out.println(get_role[0]);
+                                            String test = get_role[0];
                                             SharedPreferences sharedpreferences = getSharedPreferences("region", Context.MODE_PRIVATE);
                                             SharedPreferences.Editor editor = sharedpreferences.edit();
                                             editor.putString("region1", get_region[0]);
+                                            editor.putString("role1", get_role[0]);
                                             editor.commit();
                                             Toast.makeText(getApplicationContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
-                                            Intent home = new Intent(getApplicationContext(), accueil.class);
-                                            startActivity(home);
-                                            finish();
+
+                                            switch (get_role[0]) {
+                                                case "delegue":
+                                                    Intent intent = new Intent(getApplicationContext(), saisir.class);
+                                                    startActivity(intent);
+                                                    break;
+                                                case "visiteur":
+                                                    Intent intent2 = new Intent(getApplicationContext(), accueil.class);
+                                                    startActivity(intent2);
+                                                    break;
+                                            }
+
                                         } else {
                                             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                         }
