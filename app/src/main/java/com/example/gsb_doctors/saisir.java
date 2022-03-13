@@ -44,6 +44,9 @@ public class saisir extends AppCompatActivity {
         String get_region = prefs.getString("region1", "Aucun");
         System.out.println(get_region);
 
+        String get_role = prefs.getString("role1", "Aucun");
+        System.out.println(get_role);
+
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

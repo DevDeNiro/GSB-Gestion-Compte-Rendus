@@ -102,19 +102,20 @@ public class identification extends AppCompatActivity {
                                             }
 
                                             if (get_login[0].equals("Login Success")) {
-                                                SharedPreferences sharedpreferences = getSharedPreferences("variable_globale", Context.MODE_PRIVATE);
+                                                SharedPreferences sharedpreferences = getSharedPreferences("region", Context.MODE_PRIVATE);
                                                 SharedPreferences.Editor editor = sharedpreferences.edit();
+                                                sharedpreferences.edit().clear().apply();
                                                 editor.putString("region1", get_region[0]);
                                                 editor.putString("role1", get_role[0]);
                                                 editor.commit();
                                                 Toast.makeText(getApplicationContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
 
                                                 switch (get_role[0]) {
-                                                    case "deledgfgue":
+                                                    case "delegue":
                                                         Intent intent = new Intent(getApplicationContext(), delegue_compteRendu.class);
                                                         startActivity(intent);
                                                         break;
-                                                    case "delegue":
+                                                    case "visiteur":
                                                         Intent intent2 = new Intent(getApplicationContext(), saisir.class);
                                                         startActivity(intent2);
                                                         break;
