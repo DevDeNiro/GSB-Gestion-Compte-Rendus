@@ -19,7 +19,6 @@ public class saisir extends AppCompatActivity {
 
     android.widget.EditText medicament, duree, rdv, prix, titre;
     Button b0, b1, b2, b3;
-    TextView enregistrer;
     ProgressBar progressBar;
 
     @Override
@@ -42,7 +41,8 @@ public class saisir extends AppCompatActivity {
 
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
         String get_region = prefs.getString("region1", "Aucun");
-        System.out.println(get_region);
+        String get_id = prefs.getString("id1", "0");
+        System.out.println(get_id);
 
         String get_role = prefs.getString("role1", "Aucun");
         System.out.println(get_role);
@@ -86,13 +86,14 @@ public class saisir extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Medic, Duree, Rdv, Prix, Titre, Region;
+                String Medic, Duree, Rdv, Prix, Titre, Region, Id;
 
                 Prix = String.valueOf(prix.getText());
                 Medic = String.valueOf(medicament.getText());
                 Duree = String.valueOf(duree.getText());
                 Rdv = String.valueOf(rdv.getText());
                 Region = get_region;
+                Id = get_id;
                 Titre = String.valueOf(titre.getText());
 
                 // Verification of the type of the value entered in the EditText
@@ -105,22 +106,24 @@ public class saisir extends AppCompatActivity {
                         public void run() {
                             //Starting Write and Read data with URL
                             //Creating array for parameters
-                            String[] field = new String[6];
+                            String[] field = new String[7];
                             field[0] = "prix";
                             field[1] = "medic";
                             field[2] = "duree";
                             field[3] = "rdv";
                             field[4] = "titre";
                             field[5] = "region";
+                            field[6] = "id";
 
                             //Creating array for data
-                            String[] data = new String[6];
+                            String[] data = new String[7];
                             data[0] = Prix;
                             data[1] = Medic;
                             data[2] = Duree;
                             data[3] = Rdv;
                             data[4] = Titre;
                             data[5] = Region;
+                            data[6] = Id;
 
                             PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {

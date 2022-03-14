@@ -73,7 +73,7 @@ class DataBase
         } else return false;
     }
 
-    function visiteurInsertCompteRendu($table, $medic, $duree, $rdv, $titre, $prix, $region)
+    function visiteurInsertCompteRendu($table, $medic, $duree, $rdv, $titre, $prix, $region, $id)
     {
         $medic = $this->prepareData($medic);
         $duree = $this->prepareData($duree);
@@ -81,10 +81,11 @@ class DataBase
         $titre = $this->prepareData($titre);
         $prix = $this->prepareData($prix);
         $region = $this->prepareData($region);
+        $id = $this->prepareData($id);
 
         $this->sql =
-            "INSERT INTO " . $table . " (medic, duree, rdv, titre, prix, region) VALUES 
-            ('" . $medic . "','" . $duree . "','" . $rdv . "','" . $titre . "','" . $prix . "','" . $region . "')";
+            "INSERT INTO " . $table . " (medic, duree, rdv, titre, prix, region, id_visiteur) VALUES 
+            ('" . $medic . "','" . $duree . "','" . $rdv . "','" . $titre . "','" . $prix . "','" . $region . "','" . $id . "')";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;
@@ -122,5 +123,16 @@ class DataBase
             $role = $row['role'];
         }
         return $role;
+    }
+
+    function getId($table, $pseudo){
+        $id = $this->prepareData($pseudo);
+        $this->sql = "select id from " . $table . " where pseudo = '" . $pseudo . "'";
+        $result = mysqli_query($this->connect, $this->sql);
+        $row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) != 0) {
+            $id = $row['id'];
+        }
+        return $id;
     }
 }

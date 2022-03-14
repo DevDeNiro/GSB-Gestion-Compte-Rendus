@@ -83,6 +83,7 @@ public class identification extends AppCompatActivity {
                                             String[] get_login = new String[jsonArray.length()];
                                             String[] get_region = new String[jsonArray.length()];
                                             String[] get_role = new String[jsonArray.length()];
+                                            String[] get_id = new String[jsonArray.length()];
 
 
                                             for (int i = 0; i < jsonArray.length(); i++) {
@@ -96,6 +97,7 @@ public class identification extends AppCompatActivity {
                                                     get_login[i] = obj.getString("login");
                                                     get_region[i] = obj.getString("region");
                                                     get_role[i] = obj.getString("role");
+                                                    get_id[i] = obj.getString("id");
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
                                                 }
@@ -107,6 +109,7 @@ public class identification extends AppCompatActivity {
                                                 sharedpreferences.edit().clear().apply();
                                                 editor.putString("region1", get_region[0]);
                                                 editor.putString("role1", get_role[0]);
+                                                editor.putString("id1", get_id[0]);
                                                 editor.commit();
                                                 Toast.makeText(getApplicationContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
 
