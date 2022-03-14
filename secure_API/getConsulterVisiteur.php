@@ -1,27 +1,34 @@
 <?php
 
-<?php
-require "DataBase.php";
-$db = new DataBase();
-if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
-    if ($db->dbConnect()) {
-        // if (1 == 1){
-        //     $region = "Ile-de-france";
-        // }
-        if ($db->getConsulterVisiteur("doctor", $_POST['pseudo'], $_POST['mdp'])) {
-            $region = $db->getRegion("doctor", $_POST['pseudo']);
-            $role = $db->getRole("doctor", $_POST['pseudo']);
-            $tab = array();
-            $temp = [
-                'login' => "Login Success",
-                'region' => $region,
-                'role' => $role
-            ];
-            array_push($tab, $temp);
-            echo json_encode($tab);
-            } 
-        else {
-            echo "Pseudo or Password wrong";
-        }
-    } else echo "Error: Database connection";
-} else echo "All fields are required";
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$databasename = 'gsb_doctor';
+
+
+$conn = new mysqli($servername, $username, $password, $databasename);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$tab = array();
+
+$sql = "SELECT titre, rdv, id_visiteur FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur";
+
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
+$stmt->bind_result($titre, $rdv, $id);
+
+while ($stmt->fetch()) {
+    $temp = [
+        'titre' => $titre,
+        'rdv' => $rdv,
+        'id' => $id
+    ];
+
+    array_push($tab, $temp);
+}
+
+echo json_encode($tab);

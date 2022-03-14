@@ -62,7 +62,7 @@ public class consulter extends AppCompatActivity {
             }
         });
 
-        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getData.php");
+        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getConsulterVisiteur.php");
 
         }
 
@@ -148,7 +148,7 @@ public class consulter extends AppCompatActivity {
         String[] get_id = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
-            heroes[i] = obj.getString("prenom") + " " + obj.getString("nom") + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
+            heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
 
             get_id[i] = obj.getString("id");
 
