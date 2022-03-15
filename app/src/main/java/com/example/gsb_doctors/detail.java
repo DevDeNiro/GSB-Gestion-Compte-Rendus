@@ -21,26 +21,28 @@ import java.net.URL;
 
 public class detail extends AppCompatActivity {
 
-    TextView prenom, nom, naiss, adresse, tel, email, ante, medicament, duree, rdv;
+    TextView prenom, nom, prix, titre, ante, medicament, duree, rdv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.visiteur_detail);
 
-        Button b0, b1, b2, b3;
+        Button b1, b2, b3;
         prenom = (TextView) findViewById(R.id.prenom);
         nom = (TextView) findViewById(R.id.nom);
         ante = (TextView) findViewById(R.id.ante);
         medicament = (TextView) findViewById(R.id.medicament);
         duree = (TextView) findViewById(R.id.duree);
         rdv = (TextView) findViewById(R.id.rdv);
+        titre = (TextView) findViewById(R.id.titre);
+        prix = (TextView) findViewById(R.id.prix);
 
         Intent intent = getIntent();
         String text = intent.getStringExtra("id1");
 
         System.out.println(text);
 
-        String lien = "http://192.168.1.16/GSB_doctors/secure_API/getDataDetail.php" + "?id=" + text;
+        String lien = "http://192.168.1.16/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
         getJSON(lien);
 
         b1 = (Button) findViewById(R.id.bouton1);
@@ -138,32 +140,26 @@ public class detail extends AppCompatActivity {
 
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
-        String getPrenom, getNom, getNaiss, getAdresse, getTel, getEmail, getAnte, getMedoc, getDuree, getRdv;
+        String getPrenom, getNom, getAnte, getMedic, getDuree, getRdv, getPrix, getTitre;
         int i = 0;
         JSONObject obj = jsonArray.getJSONObject(i);
         getPrenom = obj.getString("prenom");
         getNom = obj.getString("nom");
-        getNaiss = obj.getString("naiss");
-        getAdresse = obj.getString("adresse");
-        getTel = obj.getString("tel");
-        getEmail = obj.getString("email");
         getAnte = obj.getString("ante");
-        getMedoc = obj.getString("medic");
+        getMedic = obj.getString("medic");
         getDuree = obj.getString("duree");
         getRdv = obj.getString("rdv");
+        getPrix = obj.getString("prix");
+        getTitre = obj.getString("titre");
 
         prenom.setText(getPrenom);
         nom.setText(getNom);
-        naiss.setText(getNaiss);
-        adresse.setText(getAdresse);
-        tel.setText(getTel);
-        email.setText(getEmail);
         ante.setText(getAnte);
-        medicament.setText(getMedoc);
+        medicament.setText(getMedic);
         duree.setText(getDuree);
         rdv.setText(getRdv);
-
-        System.out.println(getAdresse);
+        prix.setText(getPrix);
+        titre.setText(getTitre);
     }
 
     @Override

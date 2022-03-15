@@ -19,22 +19,24 @@ else
 
 $tab = array();
 
-$sql = "SELECT * FROM compterendu where id = '$id'";
+$sql = "SELECT id_visiteur, titre, medic, duree, rdv, ante_medicaux, prix, prenom, nom FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur WHERE c.id = '$id'";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 
-$stmt->bind_result($id, $title, $medic, $duree, $rdv, $ante, $prix);
+$stmt->bind_result($id, $titre, $medic, $duree, $rdv, $ante, $prix, $prenom, $nom);
 while ($stmt->fetch()) {
     $temp = [
         'id' => $id,
-        'title' => $title,
+        'titre' => $titre,
         'medic' => $medic,
         'duree' => $duree,
         'rdv' => $rdv,
         'ante' => $ante,
         'prix' => $prix,
+        'prenom' => $prenom, 
+        'nom' => $nom
     ];
 
     array_push($tab, $temp);
