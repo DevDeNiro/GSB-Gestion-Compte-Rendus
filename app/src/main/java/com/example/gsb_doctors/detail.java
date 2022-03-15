@@ -1,6 +1,8 @@
 package com.example.gsb_doctors;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +31,7 @@ public class detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.visiteur_detail);
 
-        Button b1, b2, b3;
+        Button b1, b2, b3, b4;
         prenom = (TextView) findViewById(R.id.prenom);
         nom = (TextView) findViewById(R.id.nom);
         ante = (TextView) findViewById(R.id.ante);
@@ -42,12 +46,13 @@ public class detail extends AppCompatActivity {
 
         System.out.println(text);
 
-        String lien = "http://192.168.1.16/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
+        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
         getJSON(lien);
 
         b1 = (Button) findViewById(R.id.bouton1);
         b2 = (Button) findViewById(R.id.bouton2);
         b3 = (Button) findViewById(R.id.bouton3);
+        b4 = (Button) findViewById(R.id.bouton4);
 
         // ***************** Changement de page au clic *****************
 
@@ -72,6 +77,33 @@ public class detail extends AppCompatActivity {
             public void onClick(View v2) {
                 // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity3();
+            }
+        });
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String suppr_id = suppr();
+                System.out.println(suppr_id);
+
+                PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+
+                        String result = putData.getResult();
+
+                        if (result.equals("Sign Up Success")) {
+                            Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
+                            Intent accueil = new Intent(getApplicationContext(), visiteur_medecin.class);
+                            startActivity(accueil);
+                            finish();
+                        } else {
+
+                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                }
             }
         });
     };
@@ -140,7 +172,7 @@ public class detail extends AppCompatActivity {
 
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
-        String getPrenom, getNom, getAnte, getMedic, getDuree, getRdv, getPrix, getTitre;
+        String getPrenom, getNom, getAnte, getMedic, getDuree, getRdv, getPrix, getTitre, getId;
         int i = 0;
         JSONObject obj = jsonArray.getJSONObject(i);
         getPrenom = obj.getString("prenom");
@@ -151,6 +183,7 @@ public class detail extends AppCompatActivity {
         getRdv = obj.getString("rdv");
         getPrix = obj.getString("prix");
         getTitre = obj.getString("titre");
+        getId = obj.getString("id");
 
         prenom.setText(getPrenom);
         nom.setText(getNom);
@@ -160,6 +193,17 @@ public class detail extends AppCompatActivity {
         rdv.setText(getRdv);
         prix.setText(getPrix);
         titre.setText(getTitre);
+
+        SharedPreferences sharedpreferences = getSharedPreferences("suppr", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        sharedpreferences.edit().clear().apply();
+        editor.putString("suppr_id", getId);
+        editor.commit();
+    }
+
+    public String suppr(){
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("suppr", MODE_PRIVATE);
+        return prefs.getString("suppr_id", "Aucun");
     }
 
     @Override
