@@ -28,15 +28,15 @@ $stmt->execute();
 $stmt->bind_result($id, $titre, $medic, $duree, $rdv, $ante, $prix, $prenom, $nom);
 while ($stmt->fetch()) {
     $temp = [
-        'id' => $id,
-        'titre' => $titre,
+        'prenom' => $prenom, 
+        'nom' => $nom,
+        'ante' => $ante,
         'medic' => $medic,
         'duree' => $duree,
         'rdv' => $rdv,
-        'ante' => $ante,
         'prix' => $prix,
-        'prenom' => $prenom, 
-        'nom' => $nom
+        'titre' => $titre,
+        'id' => $id
     ];
 
     array_push($tab, $temp);
