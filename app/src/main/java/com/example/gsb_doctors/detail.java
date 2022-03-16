@@ -30,7 +30,7 @@ public class detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.visiteur_detail);
-
+        
         Button b1, b2, b3, b4;
         prenom = (TextView) findViewById(R.id.prenom);
         nom = (TextView) findViewById(R.id.nom);
@@ -83,23 +83,32 @@ public class detail extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String suppr_id = suppr();
                 System.out.println(suppr_id);
+                String id_compte = suppr_id;
 
-                PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
+                String[] field = new String[1];
+                field[0] = "id_compte";
+
+                //Creating array for data
+                String[] data = new String[1];
+                data[0] = id_compte;
+
+                PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
 
                         String result = putData.getResult();
 
                         if (result.equals("Sign Up Success")) {
-                            Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
-                            Intent accueil = new Intent(getApplicationContext(), visiteur_medecin.class);
-                            startActivity(accueil);
+                            Toast.makeText(getApplicationContext(), "Suppression effectué", Toast.LENGTH_SHORT).show();
+                            Intent consulter = new Intent(getApplicationContext(), consulter.class);
+                            startActivity(consulter);
                             finish();
                         } else {
 
-                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Echec de la suppression", Toast.LENGTH_SHORT).show();
 
                         }
                     }

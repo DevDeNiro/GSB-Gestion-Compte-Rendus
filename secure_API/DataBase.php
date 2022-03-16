@@ -135,4 +135,16 @@ class DataBase
         }
         return $id;
     }
+
+    function delete($table, $id){
+        $id = $this->prepareData($id);
+        $this->sql = "DELETE FROM " . $table . " WHERE id = '" .$id ."'";
+        $result = mysqli_query($this->connect, $this->sql);
+        $row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) != 0) 
+            $result = true;
+        else 
+            $result = false;
+        return $result;
+    }
 }
