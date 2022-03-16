@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 $tab = array();
 
-$sql = "SELECT titre, rdv, id_visiteur FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur";
+$sql = "SELECT titre, rdv, c.id FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();

@@ -86,9 +86,8 @@ public class consulter extends AppCompatActivity {
 
     public void openActivity4(int id){
         String id2 = Integer.toString(id);
-        String id1 = id2;
         Intent detail = new Intent(this, detail.class);
-        detail.putExtra("id1", id1);
+        detail.putExtra("id2", id2);
         startActivity(detail);
         finish();
     }
@@ -151,7 +150,7 @@ public class consulter extends AppCompatActivity {
             heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
 
             get_id[i] = obj.getString("id");
-
+            System.out.println(get_id[i]);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) {

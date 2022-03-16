@@ -42,7 +42,7 @@ public class detail extends AppCompatActivity {
         prix = (TextView) findViewById(R.id.prix);
 
         Intent intent = getIntent();
-        String text = intent.getStringExtra("id1");
+        String text = intent.getStringExtra("id2");
 
         System.out.println(text);
 
