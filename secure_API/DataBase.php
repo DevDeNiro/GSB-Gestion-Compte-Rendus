@@ -137,10 +137,12 @@ class DataBase
     }
 
     function delete($table, $id){
-        $id = $this->prepareData($id);
         $sql = "DELETE FROM " . $table . " WHERE id = '" . $id ."'";
-        $query = $this->connect->prepare($sql);
-        $query->execute();
-        return true;
+        if (mysqli_query($this->connect, $sql)) {
+            return true;
+        } else {
+            return false;
+        }
+        mysqli_close($this->connect);
     }
 }

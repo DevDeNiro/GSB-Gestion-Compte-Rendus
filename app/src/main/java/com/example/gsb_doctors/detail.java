@@ -85,7 +85,6 @@ public class detail extends AppCompatActivity {
             public void onClick(View view) {
 
                 String suppr_id = suppr();
-                System.out.println(suppr_id);
                 String id_compte = suppr_id;
 
                 String[] field = new String[1];
@@ -95,14 +94,16 @@ public class detail extends AppCompatActivity {
                 String[] data = new String[1];
                 data[0] = id_compte;
 
+
                 PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
 
                         String result = putData.getResult();
+                        System.out.println(result);
 
                         if (result.equals("Sign Up Success")) {
-                            Toast.makeText(getApplicationContext(), "Suppression effectué", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Suppression effectuée", Toast.LENGTH_SHORT).show();
                             Intent consulter = new Intent(getApplicationContext(), consulter.class);
                             startActivity(consulter);
                             finish();

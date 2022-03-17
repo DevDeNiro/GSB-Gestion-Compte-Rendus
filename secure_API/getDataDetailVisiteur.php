@@ -19,7 +19,7 @@ else
 
 $tab = array();
 
-$sql = "SELECT prenom, nom, ante_medicaux, medic, duree, rdv, prix, titre, id_visiteur FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur WHERE c.id = '$id'";
+$sql = "SELECT prenom, nom, ante_medicaux, medic, duree, rdv, prix, titre, c.id FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur WHERE c.id = '$id'";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();

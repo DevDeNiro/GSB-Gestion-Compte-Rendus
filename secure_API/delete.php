@@ -5,8 +5,7 @@ if (isset($_POST['id_compte'])) {
     if ($db->dbConnect()) {
         if ($db->delete("compte_rendu", $_POST['id_compte'])) {
             echo "Sign Up Success";
-        } 
-        else {
+        } else {
             echo "Pseudo or Password wrong";
         }
     } else echo "Error: Database connection";
