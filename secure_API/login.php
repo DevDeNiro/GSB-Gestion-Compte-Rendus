@@ -3,9 +3,9 @@ require "DataBase.php";
 $db = new DataBase();
 if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
     if ($db->dbConnect()) {
-        if ($db->logIn("doctor", $_POST['pseudo'], $_POST['mdp'])) {
-            $region = $db->getRegion("doctor", $_POST['pseudo']);
-            $role = $db->getRole("doctor", $_POST['pseudo']);
+        if ($db->logIn("delegue", $_POST['pseudo'], $_POST['mdp'])) {
+            $region = $db->getRegion("delegue", $_POST['pseudo']);
+            $role = $db->getRole("delegue", $_POST['pseudo']);
             $tab = array();
             $temp = [
                 'login' => "Login Success",

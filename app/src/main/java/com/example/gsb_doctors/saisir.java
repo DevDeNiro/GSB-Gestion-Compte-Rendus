@@ -133,7 +133,7 @@ public class saisir extends AppCompatActivity {
 
                                     if (result.equals("Sign Up Success")) {
                                         Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
-                                        Intent accueil = new Intent(getApplicationContext(), visiteur_medecin.class);
+                                        Intent accueil = new Intent(getApplicationContext(), consulter.class);
                                         startActivity(accueil);
                                         finish();
                                     } else {
