@@ -150,7 +150,7 @@ public class consulter extends AppCompatActivity {
             heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
 
             get_id[i] = obj.getString("id");
-            System.out.println(get_id[i]);
+            //System.out.println(get_id[i]);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) {

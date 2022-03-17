@@ -19,17 +19,18 @@ else
 
 $tab = array();
 
-$sql = "SELECT prenom, nom FROM medecin WHERE region = '$region'";
+$sql = "SELECT prenom, nom, id FROM medecin WHERE region = '$region';";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
-$stmt->bind_result($prenom, $nom);
+$stmt->bind_result($prenom, $nom, $id);
 
 while ($stmt->fetch()) {
     $temp = [
         'prenom' => $prenom,
-        'nom' => $nom
+        'nom' => $nom,
+        'id' => $id
     ];
 
     array_push($tab, $temp);

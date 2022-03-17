@@ -2,24 +2,41 @@ package com.example.gsb_doctors;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class saisir extends AppCompatActivity {
 
     android.widget.EditText medicament, duree, rdv, prix, titre;
     Button b0, b1, b2, b3;
     ProgressBar progressBar;
+    private Spinner spinner;
+    String[] get_id1 = new String[10], get_medecin1 = new String[10];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +59,25 @@ public class saisir extends AppCompatActivity {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
         String get_region = prefs.getString("region1", "Aucun");
         String get_id = prefs.getString("id1", "0");
-        System.out.println(get_id);
+        //System.out.println(get_id);
 
         String get_role = prefs.getString("role1", "Aucun");
-        System.out.println(get_role);
+        //System.out.println(get_role);
+
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        //spinner.setOnItemSelectedListener(this);
+
+        List<String> categories = new ArrayList<String>();
+        categories.add("Item 1");
+        categories.add("Item 2");
+        categories.add("Item 3");
+        categories.add("Item 4");
+        categories.add("Item 5");
+        categories.add("Item 6");
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
 
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +118,10 @@ public class saisir extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Medic, Duree, Rdv, Prix, Titre, Region, Id;
+                String Medic, Duree, Rdv, Prix, Titre, Region, Id, Medecin;
+                int position_item;
+
+                position_item = spinner.getSelectedItemPosition();
 
                 Prix = String.valueOf(prix.getText());
                 Medic = String.valueOf(medicament.getText());
@@ -95,6 +130,10 @@ public class saisir extends AppCompatActivity {
                 Region = get_region;
                 Id = get_id;
                 Titre = String.valueOf(titre.getText());
+
+                Medecin = String.valueOf(position_item + 1);
+
+                System.out.println(Medecin);
 
                 // Verification of the type of the value entered in the EditText
                 if (!Medic.equals("") && !Duree.equals("") && !Rdv.equals("") && !Prix.equals("") && !Region.equals("") && !Titre.equals("")) {
@@ -151,6 +190,75 @@ public class saisir extends AppCompatActivity {
                 }
             }
         });
+
+        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
+        getJSON(lien);
+    }
+
+
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String item = get_id1[position];
+
+        // Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+    }
+
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+
+    }
+
+    private void getJSON(final String urlWebService) {
+
+        class GetJSON extends AsyncTask<Void, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                try {
+                    loadIntoListView(s);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                try {
+                    URL url = new URL(urlWebService);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+                        sb.append(json + "\n");
+                    }
+                    return sb.toString().trim();
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        }
+        GetJSON getJSON = new GetJSON();
+        getJSON.execute();
+    }
+
+    private void loadIntoListView(String json) throws JSONException {
+        JSONArray jsonArray = new JSONArray(json);
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+            get_medecin1[i] = obj.getString("prenom") + " " + obj.getString("nom");
+            get_id1[i] = obj.getString("id");
+        }
     }
 
     public void openActivity1(){
