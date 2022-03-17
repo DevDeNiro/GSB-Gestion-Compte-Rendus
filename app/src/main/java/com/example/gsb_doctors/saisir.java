@@ -145,7 +145,7 @@ public class saisir extends AppCompatActivity {
                         public void run() {
                             //Starting Write and Read data with URL
                             //Creating array for parameters
-                            String[] field = new String[7];
+                            String[] field = new String[8];
                             field[0] = "prix";
                             field[1] = "medic";
                             field[2] = "duree";
@@ -153,9 +153,10 @@ public class saisir extends AppCompatActivity {
                             field[4] = "titre";
                             field[5] = "region";
                             field[6] = "id";
+                            field[7] = "medecin";
 
                             //Creating array for data
-                            String[] data = new String[7];
+                            String[] data = new String[8];
                             data[0] = Prix;
                             data[1] = Medic;
                             data[2] = Duree;
@@ -163,6 +164,7 @@ public class saisir extends AppCompatActivity {
                             data[4] = Titre;
                             data[5] = Region;
                             data[6] = Id;
+                            data[7] = Medecin;
 
                             PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {

@@ -73,7 +73,7 @@ class DataBase
         } else return false;
     }
 
-    function visiteurInsertCompteRendu($table, $medic, $duree, $rdv, $titre, $prix, $region, $id)
+    function visiteurInsertCompteRendu($table, $medic, $duree, $rdv, $titre, $prix, $region, $id, $id_medecin)
     {
         $medic = $this->prepareData($medic);
         $duree = $this->prepareData($duree);
@@ -82,10 +82,11 @@ class DataBase
         $prix = $this->prepareData($prix);
         $region = $this->prepareData($region);
         $id = $this->prepareData($id);
+        $id_medecin = $this->prepareData($id_medecin);
 
         $this->sql =
-            "INSERT INTO " . $table . " (medic, duree, rdv, titre, prix, region, id_visiteur) VALUES 
-            ('" . $medic . "','" . $duree . "','" . $rdv . "','" . $titre . "','" . $prix . "','" . $region . "','" . $id . "')";
+            "INSERT INTO " . $table . " (medic, duree, rdv, titre, prix, region, id_visiteur, id_medecin) VALUES 
+            ('" . $medic . "','" . $duree . "','" . $rdv . "','" . $titre . "','" . $prix . "','" . $region . "','" . $id . "','" . $id_medecin . "')";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;
