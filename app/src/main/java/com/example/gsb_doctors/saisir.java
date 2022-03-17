@@ -37,6 +37,7 @@ public class saisir extends AppCompatActivity {
     ProgressBar progressBar;
     private Spinner spinner;
     String[] get_id1 = new String[10], get_medecin1 = new String[10];
+    List<String> categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,13 +68,8 @@ public class saisir extends AppCompatActivity {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         //spinner.setOnItemSelectedListener(this);
 
-        List<String> categories = new ArrayList<String>();
-        categories.add("Item 1");
-        categories.add("Item 2");
-        categories.add("Item 3");
-        categories.add("Item 4");
-        categories.add("Item 5");
-        categories.add("Item 6");
+        categories = new ArrayList<String>();
+        categories.add("Médecin");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -131,7 +127,13 @@ public class saisir extends AppCompatActivity {
                 Id = get_id;
                 Titre = String.valueOf(titre.getText());
 
-                Medecin = String.valueOf(position_item + 1);
+                System.out.println(position_item);
+
+                if (position_item == 0)
+                    Medecin = "Médecin";
+                else
+                    Medecin = get_id1[position_item];
+
 
                 System.out.println(Medecin);
 
@@ -172,15 +174,15 @@ public class saisir extends AppCompatActivity {
 
                                     String result = putData.getResult();
 
-                                    if (result.equals("Sign Up Success")) {
+                                    if (result.equals("Sign Up Success") && data[7] != "Médecin") {
                                         Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
                                         Intent accueil = new Intent(getApplicationContext(), consulter.class);
                                         startActivity(accueil);
                                         finish();
+                                    } else if (data[7] == "Médecin") {
+                                        Toast.makeText(getApplicationContext(), "Veuillez sélectionner un médecin", Toast.LENGTH_SHORT).show();
                                     } else {
-
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-
                                     }
                                 }
                             }
@@ -259,7 +261,9 @@ public class saisir extends AppCompatActivity {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
             get_medecin1[i] = obj.getString("prenom") + " " + obj.getString("nom");
-            get_id1[i] = obj.getString("id");
+            get_id1[i+1] = obj.getString("id");
+            categories.add(get_medecin1[i]);
+            System.out.println(get_id1[i]);
         }
     }
 
