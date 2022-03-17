@@ -19,13 +19,13 @@ else
 
 $tab = array();
 
-$sql = "SELECT prenom, nom, ante_medicaux, medic, duree, rdv, prix, titre, c.id FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur WHERE c.id = '$id'";
+$sql = "SELECT c2.prenom, c2.nom, ante_medicaux, medic, duree, rdv, prix, titre, c.id, m.prenom, m.nom FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur INNER JOIN medecin m ON m.id = c.id_medecin WHERE c.id = '$id'";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 
-$stmt->bind_result($prenom, $nom, $ante, $medic, $duree, $rdv, $prix, $titre, $id);
+$stmt->bind_result($prenom, $nom, $ante, $medic, $duree, $rdv, $prix, $titre, $id, $prenom_medecin, $nom_medecin);
 while ($stmt->fetch()) {
     $temp = [
         'prenom' => $prenom, 
@@ -36,7 +36,9 @@ while ($stmt->fetch()) {
         'rdv' => $rdv,
         'prix' => $prix,
         'titre' => $titre,
-        'id' => $id
+        'id' => $id,
+        'prenom_medecin' => $prenom_medecin,
+        'nom_medecin' => $nom_medecin
     ];
 
     array_push($tab, $temp);

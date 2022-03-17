@@ -25,7 +25,7 @@ import java.net.URL;
 
 public class detail extends AppCompatActivity {
 
-    TextView prenom, nom, prix, titre, ante, medicament, duree, rdv;
+    TextView prenom, nom, prix, titre, ante, medicament, duree, rdv, medecin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,7 @@ public class detail extends AppCompatActivity {
         rdv = (TextView) findViewById(R.id.rdv);
         titre = (TextView) findViewById(R.id.titre);
         prix = (TextView) findViewById(R.id.prix);
+        medecin = (TextView) findViewById(R.id.medecin);
 
         Intent intent = getIntent();
         String text = intent.getStringExtra("id2");
@@ -182,7 +183,7 @@ public class detail extends AppCompatActivity {
 
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
-        String getPrenom, getNom, getAnte, getMedic, getDuree, getRdv, getPrix, getTitre, getId;
+        String getPrenom, getNom, getAnte, getMedic, getDuree, getRdv, getPrix, getTitre, getId, Medecin;
         int i = 0;
         JSONObject obj = jsonArray.getJSONObject(i);
         getPrenom = obj.getString("prenom");
@@ -194,6 +195,7 @@ public class detail extends AppCompatActivity {
         getPrix = obj.getString("prix");
         getTitre = obj.getString("titre");
         getId = obj.getString("id");
+        Medecin = obj.getString("prenom_medecin") + " " + obj.getString("nom_medecin");
 
         prenom.setText(getPrenom);
         nom.setText(getNom);
@@ -203,6 +205,7 @@ public class detail extends AppCompatActivity {
         rdv.setText(getRdv);
         prix.setText(getPrix);
         titre.setText(getTitre);
+        medecin.setText(Medecin);
 
         SharedPreferences sharedpreferences = getSharedPreferences("suppr", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
