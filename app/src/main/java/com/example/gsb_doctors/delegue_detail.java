@@ -29,9 +29,9 @@ public class delegue_detail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.visiteur_detail);
+        setContentView(R.layout.delegue_detail);
 
-        Button b1, b2, b3, b4;
+        Button b1, b2, b4;
         prenom = (TextView) findViewById(R.id.prenom);
         nom = (TextView) findViewById(R.id.nom);
         ante = (TextView) findViewById(R.id.ante);
@@ -52,7 +52,6 @@ public class delegue_detail extends AppCompatActivity {
 
         b1 = (Button) findViewById(R.id.bouton1);
         b2 = (Button) findViewById(R.id.bouton2);
-        b3 = (Button) findViewById(R.id.bouton3);
         b4 = (Button) findViewById(R.id.bouton4);
 
         // ***************** Changement de page au clic *****************
@@ -70,14 +69,6 @@ public class delegue_detail extends AppCompatActivity {
             public void onClick(View v2) {
                 // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity2();
-            }
-        });
-
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
-                openActivity3();
             }
         });
 
@@ -120,20 +111,14 @@ public class delegue_detail extends AppCompatActivity {
     };
 
     public void openActivity1(){
-        Intent saisir = new Intent(this, saisir.class);
+        Intent saisir = new Intent(this, delegue_compteRendu.class);
         startActivity(saisir);
         finish();
     }
 
     public void openActivity2(){
-        Intent accueil = new Intent(this, visiteur_medecin.class);
+        Intent accueil = new Intent(this, delegue_statistique.class);
         startActivity(accueil);
-        finish();
-    }
-
-    public void openActivity3(){
-        Intent consulter = new Intent(this, consulter.class);
-        startActivity(consulter);
         finish();
     }
 
