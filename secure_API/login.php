@@ -6,11 +6,13 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         if ($db->logIn("delegue", $_POST['pseudo'], $_POST['mdp'])) {
             $region = $db->getRegion("delegue", $_POST['pseudo']);
             $role = $db->getRole("delegue", $_POST['pseudo']);
+            $id = $db->getId("delegue", $_POST['pseudo']);
             $tab = array();
             $temp = [
                 'login' => "Login Success",
                 'region' => $region,
-                'role' => $role
+                'role' => $role,
+                'id' => $id
             ];
             array_push($tab, $temp);
             echo json_encode($tab);
