@@ -76,5 +76,12 @@
             android:label="@string/stat">
         </activity>
 
+        <activity
+            android:name=".delegue_detail"
+            android:exported="true"
+            tools:ignore="Instantiatable"
+            android:label="@string/stat">
+        </activity>
+
     </application>
 </manifest>
