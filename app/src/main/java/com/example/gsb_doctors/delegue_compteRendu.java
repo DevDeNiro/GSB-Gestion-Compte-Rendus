@@ -132,7 +132,9 @@ public class delegue_compteRendu extends AppCompatActivity {
         String[] get_id = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
-            heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
+            heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator")
+                    + "Date : " + obj.getString("rdv") + System.getProperty("line.separator")
+                    + "Région " + obj.getString("region");
 
             get_id[i] = obj.getString("id");
             //System.out.println(get_id[i]);

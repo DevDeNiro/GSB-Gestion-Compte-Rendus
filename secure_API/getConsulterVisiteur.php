@@ -14,18 +14,19 @@ if ($conn->connect_error) {
 
 $tab = array();
 
-$sql = "SELECT titre, rdv, c.id FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur";
+$sql = "SELECT titre, rdv, c.id, c.region FROM compte_rendu c INNER JOIN client c2 ON c2.id = c.id_visiteur";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
-$stmt->bind_result($titre, $rdv, $id);
+$stmt->bind_result($titre, $rdv, $id, $region);
 
 while ($stmt->fetch()) {
     $temp = [
         'titre' => $titre,
         'rdv' => $rdv,
-        'id' => $id
+        'id' => $id, 
+        'region' => $region 
     ];
 
     array_push($tab, $temp);

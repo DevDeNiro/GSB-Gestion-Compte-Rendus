@@ -31,8 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_marginStart="5dp"
-                    android:backgroundTint="@color/teal_700"/>
+                    android:layout_marginStart="5dp"/>
 
                 <Button
                     android:id="@+id/bouton2"
@@ -41,7 +40,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_marginHorizontal="5dp"/>
+                    android:layout_marginHorizontal="5dp"
+                    android:backgroundTint="@color/teal_700"/>
             </LinearLayout>
 
 
