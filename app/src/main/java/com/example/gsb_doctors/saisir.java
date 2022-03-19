@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -283,5 +285,23 @@ public class saisir extends AppCompatActivity {
         Intent consulter = new Intent(this, consulter.class);
         startActivity(consulter);
         finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.visiteur_menu_saisir, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.deco) {
+            Intent accueil = new Intent(this, identification.class);
+            startActivity(accueil);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

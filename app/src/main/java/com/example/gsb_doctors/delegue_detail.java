@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -47,7 +49,7 @@ public class delegue_detail extends AppCompatActivity {
 
         System.out.println(text);
 
-        String lien = "http://10.60.22.78/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
+        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
         getJSON(lien);
 
         b1 = (Button) findViewById(R.id.bouton1);
@@ -209,5 +211,23 @@ public class delegue_detail extends AppCompatActivity {
         Intent intentBack = new Intent(this, consulter.class);
         startActivity(intentBack);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.visiteur_menu_saisir, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.deco) {
+            Intent accueil = new Intent(this, identification.class);
+            startActivity(accueil);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

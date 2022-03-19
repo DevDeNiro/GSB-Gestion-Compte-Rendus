@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -73,7 +75,7 @@ public class delegue_statistique extends AppCompatActivity {
             }
         });
         System.out.println(Ile);
-        getJSON("http://10.60.22.78/GSB_doctors/secure_API/getCompterenduRegion.php");
+        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getCompterenduRegion.php");
         SharedPreferences ile2 = getApplicationContext().getSharedPreferences("regionIle", MODE_PRIVATE);
         String getIle = ile2.getString("ile", "0");
         SharedPreferences paca2 = getApplicationContext().getSharedPreferences("regionPaca", MODE_PRIVATE);
@@ -265,5 +267,23 @@ public class delegue_statistique extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.visiteur_menu_saisir, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.deco) {
+            Intent accueil = new Intent(this, identification.class);
+            startActivity(accueil);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
