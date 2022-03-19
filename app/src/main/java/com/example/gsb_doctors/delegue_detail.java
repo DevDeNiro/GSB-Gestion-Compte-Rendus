@@ -89,7 +89,7 @@ public class delegue_detail extends AppCompatActivity {
                 data[0] = id_compte;
 
 
-                PutData putData = new PutData("http://10.60.22.78/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
+                PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
 

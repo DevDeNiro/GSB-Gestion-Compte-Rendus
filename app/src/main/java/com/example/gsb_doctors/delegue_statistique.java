@@ -33,7 +33,8 @@ import java.net.URL;
 public class delegue_statistique extends AppCompatActivity {
 
     Button b1, b2;
-    int Ile = 0, Paca = 0, Auver = 0, Bourg = 0, Occi = 0, Aqui = 0, Bret = 0, Pays = 0, Cent = 0, Haut = 0, Grand = 0;
+    int Ile = 0, Paca = 0, Auver = 0, Bourg = 0, Occi = 0, Aqui = 0, Bret = 0, Pays = 0, Cent = 0, Haut = 0, Grand = 0,
+            calc_Ile = 0, calc_Paca = 0, calc_Auver = 0, calc_Bourg = 0, calc_Occi = 0, calc_Aqui = 0, calc_Bret = 0, calc_Pays = 0, calc_Cent = 0, calc_Haut = 0, calc_Grand = 0;
     TextView ile, paca, auver, bourg, occi, aqui, bret, pays, cent, haut, grand;
     String getIle, getpaca, getAuver, getBourg, getOcci, getAqui, getBret, getPays, getCent, getHaut, getGrand;
     @Override
@@ -82,6 +83,8 @@ public class delegue_statistique extends AppCompatActivity {
         String getPaca = paca2.getString("paca", "0");
         SharedPreferences auver2 = getApplicationContext().getSharedPreferences("regionAuver", MODE_PRIVATE);
         String getAuver = auver2.getString("auver", "0");
+        SharedPreferences bourg2 = getApplicationContext().getSharedPreferences("regionBourg", MODE_PRIVATE);
+        String getBourg = bourg2.getString("bourg", "0");
         SharedPreferences occi2 = getApplicationContext().getSharedPreferences("regionOcci", MODE_PRIVATE);
         String getOcci = occi2.getString("occi", "0");
         SharedPreferences aqui2 = getApplicationContext().getSharedPreferences("regionAqui", MODE_PRIVATE);
@@ -96,8 +99,9 @@ public class delegue_statistique extends AppCompatActivity {
         String getHaut = haut2.getString("haut", "0");
         SharedPreferences grand2 = getApplicationContext().getSharedPreferences("regionGrand", MODE_PRIVATE);
         String getGrand = grand2.getString("grand", "0");
-        SharedPreferences bourg2 = getApplicationContext().getSharedPreferences("regionBourg", MODE_PRIVATE);
-        String getBourg = bourg2.getString("bourg", "0");
+
+
+        System.out.println(getBourg);
 
         ile.setText(getIle);
         paca.setText(getPaca);
@@ -172,34 +176,34 @@ public class delegue_statistique extends AppCompatActivity {
         ile2.edit().clear().apply();
         SharedPreferences paca2 = getSharedPreferences("regionPaca", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor2 = paca2.edit();
-        ile2.edit().clear().apply();
+        paca2.edit().clear().apply();
         SharedPreferences auver2 = getSharedPreferences("regionAuver", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor3 = auver2.edit();
-        ile2.edit().clear().apply();
+        auver2.edit().clear().apply();
         SharedPreferences occi2 = getSharedPreferences("regionOcci", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor4 = occi2.edit();
-        ile2.edit().clear().apply();
+        occi2.edit().clear().apply();
         SharedPreferences aqui2 = getSharedPreferences("regionAqui", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor5 = aqui2.edit();
-        ile2.edit().clear().apply();
+        aqui2.edit().clear().apply();
         SharedPreferences bret2 = getSharedPreferences("regionBret", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor6 = bret2.edit();
-        ile2.edit().clear().apply();
+        bret2.edit().clear().apply();
         SharedPreferences pays2 = getSharedPreferences("regionPays", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor7 = pays2.edit();
-        ile2.edit().clear().apply();
+        pays2.edit().clear().apply();
         SharedPreferences cent2 = getSharedPreferences("regionCent", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor8 = cent2.edit();
-        ile2.edit().clear().apply();
+        cent2.edit().clear().apply();
         SharedPreferences haut2 = getSharedPreferences("regionHaut", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor9 = haut2.edit();
-        ile2.edit().clear().apply();
+        haut2.edit().clear().apply();
         SharedPreferences grand2 = getSharedPreferences("regionGrand", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor10 = grand2.edit();
-        ile2.edit().clear().apply();
+        grand2.edit().clear().apply();
         SharedPreferences bourg2 = getSharedPreferences("regionBourg", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor11 = bourg2.edit();
-        ile2.edit().clear().apply();
+        bourg2.edit().clear().apply();
 
 
         JSONArray jsonArray = new JSONArray(json);
@@ -212,61 +216,127 @@ public class delegue_statistique extends AppCompatActivity {
             switch (get_region[i]) {
                 case "Ile-De-France":
                     Ile++;
-                    editor.putString("ile", String.valueOf(Ile));
-                    editor.commit();
                     break;
                 case ("PACA"):
                     Paca++;
-                    editor2.putString("paca", String.valueOf(Ile));
-                    editor2.commit();
                     break;
                 case "Auvergne-Rhône-Alpes":
                     Auver++;
-                    editor3.putString("auver", String.valueOf(Ile));
-                    editor3.commit();
                     break;
                 case "Bourgogne-Franche-Comté":
                     Bourg++;
-                    editor4.putString("bourg", String.valueOf(Ile));
-                    editor4.commit();
                     break;
                 case "Occitanie":
                     Occi++;
-                    editor5.putString("occi", String.valueOf(Ile));
-                    editor5.commit();
                     break;
                 case "Nouvelle Aquitaine":
                     Aqui++;
-                    editor6.putString("aqui", String.valueOf(Ile));
-                    editor6.commit();
                     break;
                 case "Bretagne":
                     Bret++;
-                    editor7.putString("bret", String.valueOf(Ile));
-                    editor7.commit();
                     break;
                 case "Pays de la Loire":
                     Pays++;
-                    editor8.putString("pays", String.valueOf(Ile));
-                    editor8.commit();
                     break;
                 case "Centre-Val de Loire":
                     Cent++;
-                    editor9.putString("cent", String.valueOf(Ile));
-                    editor9.commit();
                     break;
                 case "Hauts-de-France":
                     Haut++;
-                    editor10.putString("haut", String.valueOf(Ile));
-                    editor10.commit();
                     break;
                 case "Grand Est":
                     Grand++;
-                    editor11.putString("grand", String.valueOf(Ile));
-                    editor11.commit();
                     break;
             }
         }
+
+        if (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand != 0)
+            calc_Ile = (100 * Ile) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Ile = 100;
+        String string_Ile = Integer.toString(Ile) + " - " + Integer.toString(calc_Ile) + "%";
+        editor.putString("ile", String.valueOf(string_Ile));
+        editor.commit();
+
+        if (Ile + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand != 0)
+            calc_Paca = (100 * Paca) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Paca = 100;
+        String string_Paca = Integer.toString(Paca) + " - " + Integer.toString(calc_Paca) + "%";
+        editor2.putString("paca", String.valueOf(string_Paca));
+        editor2.commit();
+
+        if (Paca + Ile + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand != 0)
+            calc_Auver = (100 * Auver) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Auver = 100;
+        String string_Auver = Integer.toString(Auver) + " - " + Integer.toString(calc_Auver) + "%";
+        editor3.putString("auver", String.valueOf(string_Auver));
+        editor3.commit();
+
+        if (Paca + Auver + Ile + Occi + Aqui + Bret + Pays + Cent + Haut + Grand != 0)
+            calc_Bourg = (100 * Bourg) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Bourg = 100;
+        String string_Bourg = Integer.toString(Bourg) + " - " + Integer.toString(calc_Bourg) + "%";
+        editor11.putString("bourg", String.valueOf(string_Bourg));
+        editor11.commit();
+
+        if (Paca + Auver + Bourg + Ile + Aqui + Bret + Pays + Cent + Haut + Grand != 0)
+            calc_Occi = (100 * Occi) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Occi = 100;
+        String string_Occi = Integer.toString(Occi) + " - " + Integer.toString(calc_Occi) + "%";
+        editor4.putString("occi", String.valueOf(string_Occi));
+        editor4.commit();
+
+        if (Paca + Auver + Bourg + Occi + Ile + Bret + Pays + Cent + Haut + Grand != 0)
+            calc_Aqui = (100 * Aqui) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Aqui = 100;
+        String string_Aqui = Integer.toString(Aqui) + " - " + Integer.toString(calc_Aqui) + "%";
+        editor5.putString("aqui", String.valueOf(string_Aqui));
+        editor5.commit();
+
+        if (Paca + Auver + Bourg + Occi + Aqui + Ile + Pays + Cent + Haut + Grand != 0)
+            calc_Bret = (100 * Bret) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Bret = 100;
+        String string_Bret = Integer.toString(Bret) + " - " + Integer.toString(calc_Bret) + "%";
+        editor6.putString("bret", String.valueOf(string_Bret));
+        editor6.commit();
+
+        if (Paca + Auver + Bourg + Occi + Aqui + Bret + Ile + Cent + Haut + Grand != 0)
+            calc_Pays = (100 * Pays) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Pays = 100;
+        String string_Pays = Integer.toString(Pays) + " - " + Integer.toString(calc_Pays) + "%";
+        editor7.putString("pays", String.valueOf(string_Pays));
+        editor7.commit();
+
+        if (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Ile + Haut + Grand != 0)
+            calc_Cent = (100 * Cent) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Cent = 100;
+        String string_Cent = Integer.toString(Cent) + " - " + Integer.toString(calc_Cent) + "%";
+        editor8.putString("cent", String.valueOf(string_Cent));
+        editor8.commit();
+
+        if (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Ile + Grand != 0)
+            calc_Haut = (100 * Haut) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Haut = 100;
+        String string_Haut = Integer.toString(Haut) + " - " + Integer.toString(calc_Haut) + "%";
+        editor9.putString("haut", String.valueOf(string_Haut));
+        editor9.commit();
+
+        if (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Ile != 0)
+            calc_Grand = (100 * Grand) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
+        else
+            calc_Grand = 100;
+        String string_Grand = Integer.toString(Grand) + " - " + Integer.toString(calc_Grand) + "%";
+        editor10.putString("grand", String.valueOf(string_Grand));
+        editor10.commit();
     }
 
     @Override
