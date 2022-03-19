@@ -36,7 +36,6 @@ public class delegue_statistique extends AppCompatActivity {
     int Ile = 0, Paca = 0, Auver = 0, Bourg = 0, Occi = 0, Aqui = 0, Bret = 0, Pays = 0, Cent = 0, Haut = 0, Grand = 0,
             calc_Ile = 0, calc_Paca = 0, calc_Auver = 0, calc_Bourg = 0, calc_Occi = 0, calc_Aqui = 0, calc_Bret = 0, calc_Pays = 0, calc_Cent = 0, calc_Haut = 0, calc_Grand = 0;
     TextView ile, paca, auver, bourg, occi, aqui, bret, pays, cent, haut, grand;
-    String getIle, getpaca, getAuver, getBourg, getOcci, getAqui, getBret, getPays, getCent, getHaut, getGrand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
