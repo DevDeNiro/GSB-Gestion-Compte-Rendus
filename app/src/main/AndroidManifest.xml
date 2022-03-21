@@ -66,21 +66,21 @@
             android:name=".delegue_compteRendu"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/compte">
+            android:label="@string/consulter">
         </activity>
 
         <activity
             android:name=".delegue_statistique"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/stat">
+            android:label="@string/detail">
         </activity>
 
         <activity
             android:name=".delegue_detail"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/stat">
+            android:label="@string/consulter">
         </activity>
 
     </application>
