@@ -61,7 +61,7 @@ public class delegue_compteRendu extends AppCompatActivity {
             }
         });
 
-        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getConsulterVisiteur.php");
+        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getConsulterDelegue.php");
     }
 
     public void openActivity1(){
@@ -133,8 +133,8 @@ public class delegue_compteRendu extends AppCompatActivity {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
             heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator")
-                    + "Date : " + obj.getString("rdv") + System.getProperty("line.separator")
-                    + "Région " + obj.getString("region");
+                    + "Prochain rendez-vous : " + obj.getString("rdv") + System.getProperty("line.separator")
+                    + "Région : " + obj.getString("region");
 
             get_id[i] = obj.getString("id");
             //System.out.println(get_id[i]);

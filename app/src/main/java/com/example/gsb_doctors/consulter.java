@@ -154,7 +154,7 @@ public class consulter extends AppCompatActivity {
         String[] get_id = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
-            heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
+            heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Prochain rendez-vous : " + obj.getString("rdv");;
 
             get_id[i] = obj.getString("id");
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // Création d'un lien unique par ligne
