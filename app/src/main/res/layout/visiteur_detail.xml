@@ -15,7 +15,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -51,15 +52,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_marginEnd="5dp"/>
-                    <Button
-                        android:id="@+id/bouton4"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Supprimer"
-                        android:backgroundTint="@color/red"/>
+
                  </LinearLayout>
 
                 <LinearLayout
@@ -294,7 +287,15 @@
 
                     </LinearLayout>
                 </LinearLayout>
-
+                <Button
+                    android:id="@+id/bouton4"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Supprimer"
+                    android:backgroundTint="@color/red"
+                    android:layout_marginTop="20dp"/>
 
         </LinearLayout>
     </ScrollView>
