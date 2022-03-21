@@ -62,7 +62,6 @@ public class delegue_statistique extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity1();
             }
         });
@@ -70,12 +69,14 @@ public class delegue_statistique extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity2();
             }
         });
         System.out.println(Ile);
-        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getCompterenduRegion.php");
+
+        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getCompterenduRegion.php");
+
+        // Récupération des valeurs de région dans des variables
         SharedPreferences ile2 = getApplicationContext().getSharedPreferences("regionIle", MODE_PRIVATE);
         String getIle = ile2.getString("ile", "0");
         SharedPreferences paca2 = getApplicationContext().getSharedPreferences("regionPaca", MODE_PRIVATE);
@@ -99,9 +100,7 @@ public class delegue_statistique extends AppCompatActivity {
         SharedPreferences grand2 = getApplicationContext().getSharedPreferences("regionGrand", MODE_PRIVATE);
         String getGrand = grand2.getString("grand", "0");
 
-
-        System.out.println(getBourg);
-
+        // Affichage des valeur dans les champs
         ile.setText(getIle);
         paca.setText(getPaca);
         auver.setText(getAuver);
@@ -127,7 +126,7 @@ public class delegue_statistique extends AppCompatActivity {
         finish();
     }
 
-    private void getJSON(final String urlWebService) {
+    private void getJSON(final String urlWebService) { // Lecture du tableau Json
 
         class GetJSON extends AsyncTask<Void, Void, String> {
 
@@ -170,6 +169,7 @@ public class delegue_statistique extends AppCompatActivity {
     }
 
     private void loadIntoListView(String json) throws JSONException {
+        //Création des variables globales et nettoyage de ces dernières
         SharedPreferences ile2 = getSharedPreferences("regionIle", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = ile2.edit();
         ile2.edit().clear().apply();
@@ -209,9 +209,9 @@ public class delegue_statistique extends AppCompatActivity {
         String[] get_region = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
-
             get_region[i] = obj.getString("region");
 
+            // Récupération du nombre de région
             switch (get_region[i]) {
                 case "Ile-De-France":
                     Ile++;
@@ -249,6 +249,7 @@ public class delegue_statistique extends AppCompatActivity {
             }
         }
 
+        // Calculs pour les pourcentages, et ajout dans les variables globales
         if (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand != 0)
             calc_Ile = (100 * Ile) / (Paca + Auver + Bourg + Occi + Aqui + Bret + Pays + Cent + Haut + Grand + Ile);
         else
@@ -337,6 +338,8 @@ public class delegue_statistique extends AppCompatActivity {
         editor10.putString("grand", String.valueOf(string_Grand));
         editor10.commit();
     }
+
+    // ********** Bouton déconnexion **********
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

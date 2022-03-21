@@ -62,17 +62,13 @@ public class saisir extends AppCompatActivity {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
         String get_region = prefs.getString("region1", "Aucun");
         String get_id = prefs.getString("id1", "0");
-        //System.out.println(get_id);
-
-        String get_role = prefs.getString("role1", "Aucun");
-        //System.out.println(get_role);
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        //spinner.setOnItemSelectedListener(this);
 
         categories = new ArrayList<String>();
         categories.add("Médecin");
 
+        //Définition du tableau pour le spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
@@ -91,7 +87,6 @@ public class saisir extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity1();
             }
         });
@@ -99,7 +94,6 @@ public class saisir extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity2();
             }
         });
@@ -129,18 +123,12 @@ public class saisir extends AppCompatActivity {
                 Id = get_id;
                 Titre = String.valueOf(titre.getText());
 
-                System.out.println(position_item);
-
                 if (position_item == 0)
                     Medecin = "Médecin";
                 else
                     Medecin = get_id1[position_item];
 
-
-                System.out.println(Medecin);
-
-                // Verification of the type of the value entered in the EditText
-                if (!Medic.equals("") && !Duree.equals("") && !Rdv.equals("") && !Prix.equals("") && !Region.equals("") && !Titre.equals("")) {
+                if (!Medic.equals("") && !Duree.equals("") && !Rdv.equals("") && !Prix.equals("") && !Region.equals("") && !Titre.equals("")) { // Vérifie qu'aucun champ n'est null
                     //Start ProgressBar first (Set visibility VISIBLE)
 
                     Handler handler = new Handler(Looper.getMainLooper());
@@ -170,13 +158,11 @@ public class saisir extends AppCompatActivity {
                             data[6] = Id;
                             data[7] = Medecin;
 
-                            PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
+                            PutData putData = new PutData("http://10.60.20.146/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
-
                                     String result = putData.getResult();
-
-                                    if (result.equals("Sign Up Success") && data[7] != "Médecin") {
+                                    if (result.equals("Sign Up Success") && data[7] != "Médecin") { // Vérifie que le spinner a bien été sélectionné sur un médecin
                                         Toast.makeText(getApplicationContext(), "Enregistrement effectué", Toast.LENGTH_SHORT).show();
                                         Intent accueil = new Intent(getApplicationContext(), consulter.class);
                                         startActivity(accueil);
@@ -197,7 +183,7 @@ public class saisir extends AppCompatActivity {
             }
         });
 
-        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
+        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
         getJSON(lien);
     }
 
@@ -216,7 +202,7 @@ public class saisir extends AppCompatActivity {
 
     }
 
-    private void getJSON(final String urlWebService) {
+    private void getJSON(final String urlWebService) { // Lecture du tableau Json
 
         class GetJSON extends AsyncTask<Void, Void, String> {
 
@@ -258,14 +244,13 @@ public class saisir extends AppCompatActivity {
         getJSON.execute();
     }
 
-    private void loadIntoListView(String json) throws JSONException {
+    private void loadIntoListView(String json) throws JSONException { // Affichage des différentes colonnes dans les différents blocs (titre, date...)
         JSONArray jsonArray = new JSONArray(json);
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
             get_medecin1[i] = obj.getString("prenom") + " " + obj.getString("nom");
             get_id1[i+1] = obj.getString("id");
-            categories.add(get_medecin1[i]);
-            System.out.println(get_id1[i]);
+            categories.add(get_medecin1[i]); // Ajout dans le spinner un médecin
         }
     }
 
@@ -286,6 +271,8 @@ public class saisir extends AppCompatActivity {
         startActivity(consulter);
         finish();
     }
+
+    // ********** Bouton déconnexion **********
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

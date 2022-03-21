@@ -25,7 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class consulter extends AppCompatActivity {
-    Button b0, b1, b2, b3;
+    Button b1, b2, b3;
     ListView listView;
 
     @Override
@@ -43,7 +43,6 @@ public class consulter extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity1();
             }
         });
@@ -51,7 +50,6 @@ public class consulter extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity2();
             }
         });
@@ -59,12 +57,11 @@ public class consulter extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity3();
             }
         });
 
-        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getConsulterVisiteur.php");
+        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getConsulterVisiteur.php");
 
         }
 
@@ -86,7 +83,7 @@ public class consulter extends AppCompatActivity {
         finish();
     }
 
-    public void openActivity4(int id){
+    public void openActivity4(int id){ // Afficher les détails d'un compte rendu
         String id2 = Integer.toString(id);
         Intent detail = new Intent(this, detail.class);
         detail.putExtra("id2", id2);
@@ -101,7 +98,7 @@ public class consulter extends AppCompatActivity {
 
     }
 
-    private void getJSON(final String urlWebService) {
+    private void getJSON(final String urlWebService) { // Lecture du tableau Json
 
         class GetJSON extends AsyncTask<Void, Void, String> {
 
@@ -143,7 +140,7 @@ public class consulter extends AppCompatActivity {
         getJSON.execute();
     }
 
-    private void loadIntoListView(String json) throws JSONException {
+    private void loadIntoListView(String json) throws JSONException { // Affichage des différentes colonnes dans les différents blocs (titre, date...)
         JSONArray jsonArray = new JSONArray(json);
         String[] heroes = new String[jsonArray.length()];
         String[] get_id = new String[jsonArray.length()];
@@ -152,10 +149,9 @@ public class consulter extends AppCompatActivity {
             heroes[i] = obj.getString("titre") + " " + System.getProperty("line.separator") + "Date : " + obj.getString("rdv");;
 
             get_id[i] = obj.getString("id");
-            //System.out.println(get_id[i]);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // Création d'un lien unique par ligne
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) {
+                public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) { // Variable n : ligne de la listeview
                     int get_id2 = Integer.parseInt(get_id[n]);
                     openActivity4(get_id2);
                 }
@@ -165,6 +161,8 @@ public class consulter extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
         listView.setAdapter(arrayAdapter);
     }
+
+    // ********** Bouton déconnexion **********
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

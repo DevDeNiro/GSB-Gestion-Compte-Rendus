@@ -49,7 +49,7 @@ public class delegue_detail extends AppCompatActivity {
 
         System.out.println(text);
 
-        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
+        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
         getJSON(lien);
 
         b1 = (Button) findViewById(R.id.bouton1);
@@ -61,7 +61,6 @@ public class delegue_detail extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity1();
             }
         });
@@ -69,7 +68,6 @@ public class delegue_detail extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity2();
             }
         });
@@ -89,7 +87,7 @@ public class delegue_detail extends AppCompatActivity {
                 data[0] = id_compte;
 
 
-                PutData putData = new PutData("http://192.168.1.136/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
+                PutData putData = new PutData("http://10.60.20.146/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
 
@@ -124,7 +122,7 @@ public class delegue_detail extends AppCompatActivity {
         finish();
     }
 
-    private void getJSON(final String urlWebService) {
+    private void getJSON(final String urlWebService) { // Lecture du tableau Json
 
         System.out.println(urlWebService);
 
@@ -168,7 +166,7 @@ public class delegue_detail extends AppCompatActivity {
         getJSON.execute();
     }
 
-    private void loadIntoListView(String json) throws JSONException {
+    private void loadIntoListView(String json) throws JSONException { // Affichage des différentes colonnes dans les différents blocs (titre, date...)
         JSONArray jsonArray = new JSONArray(json);
         String getPrenom, getNom, getAnte, getMedic, getDuree, getRdv, getPrix, getTitre, getId, Medecin;
         int i = 0;
@@ -212,6 +210,8 @@ public class delegue_detail extends AppCompatActivity {
         startActivity(intentBack);
 
     }
+
+    // ********** Bouton déconnexion **********
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

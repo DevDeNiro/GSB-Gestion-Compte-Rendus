@@ -50,7 +50,6 @@ public class delegue_compteRendu extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity1();
             }
         });
@@ -58,12 +57,11 @@ public class delegue_compteRendu extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                // Appel à la fonction openActivity pour changer de page (activity)
                 openActivity2();
             }
         });
 
-        getJSON("http://192.168.1.136/GSB_doctors/secure_API/getConsulterVisiteur.php");
+        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getConsulterVisiteur.php");
     }
 
     public void openActivity1(){
@@ -78,7 +76,7 @@ public class delegue_compteRendu extends AppCompatActivity {
         finish();
     }
 
-    public void openActivity3(int id){
+    public void openActivity3(int id){ // Afficher les détails d'un compte rendu
         String id2 = Integer.toString(id);
         Intent detail = new Intent(this, delegue_detail.class);
         detail.putExtra("id2", id2);
@@ -86,7 +84,7 @@ public class delegue_compteRendu extends AppCompatActivity {
         finish();
     }
 
-    private void getJSON(final String urlWebService) {
+    private void getJSON(final String urlWebService) { // Lecture du tableau Json
 
         class GetJSON extends AsyncTask<Void, Void, String> {
 
@@ -128,7 +126,7 @@ public class delegue_compteRendu extends AppCompatActivity {
         getJSON.execute();
     }
 
-    private void loadIntoListView(String json) throws JSONException {
+    private void loadIntoListView(String json) throws JSONException { // Affichage des différentes colonnes dans les différents blocs (titre, date...)
         JSONArray jsonArray = new JSONArray(json);
         String[] heroes = new String[jsonArray.length()];
         String[] get_id = new String[jsonArray.length()];
@@ -140,9 +138,9 @@ public class delegue_compteRendu extends AppCompatActivity {
 
             get_id[i] = obj.getString("id");
             //System.out.println(get_id[i]);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // Création d'un lien unique par ligne
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) {
+                public void onItemClick(AdapterView<?> adapterView, View view, int n, long l) { // Variable n : ligne de la listeview
                     int get_id2 = Integer.parseInt(get_id[n]);
                     openActivity3(get_id2);
                 }
@@ -152,6 +150,8 @@ public class delegue_compteRendu extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
         listView.setAdapter(arrayAdapter);
     }
+
+    // ********** Bouton déconnexion **********
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
