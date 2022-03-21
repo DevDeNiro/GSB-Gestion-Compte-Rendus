@@ -1,6 +1,7 @@
 package com.example.gsb_doctors;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -61,7 +62,14 @@ public class consulter extends AppCompatActivity {
             }
         });
 
-        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getConsulterVisiteur.php");
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
+        String get_id = prefs.getString("id1", "0");
+
+        System.out.println(get_id);
+
+        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getConsulterVisiteur.php?id=" + get_id;
+        System.out.println(get_id);
+        getJSON(lien);
 
         }
 

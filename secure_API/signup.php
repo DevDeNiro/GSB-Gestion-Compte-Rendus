@@ -1,9 +1,9 @@
 <?php
 require "DataBase.php";
 $db = new DataBase();
-if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+if (isset($_GET['pseudo']) && isset($_GET['mdp'])) {
     if ($db->dbConnect()) {
-        if ($db->signUp("delegue", $_POST['pseudo'], $_POST['mdp'])) {
+        if ($db->signUp("client", $_GET['pseudo'], $_GET['mdp'])) {
             echo "Sign Up Success";
         } else echo "Sign up Failed";
     } else echo "Error: Database connection";
