@@ -119,7 +119,7 @@ public class identification extends AppCompatActivity {
                                                         startActivity(intent);
                                                         break;
                                                     case "visiteur":
-                                                        Intent intent2 = new Intent(getApplicationContext(), saisir.class);
+                                                        Intent intent2 = new Intent(getApplicationContext(), consulter.class);
                                                         startActivity(intent2);
                                                         break;
                                                 }
