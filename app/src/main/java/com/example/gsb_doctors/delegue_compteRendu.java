@@ -61,7 +61,7 @@ public class delegue_compteRendu extends AppCompatActivity {
             }
         });
 
-        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getConsulterDelegue.php");
+        getJSON("https://apicompterendu.fr/getConsulterDelegue.php");
     }
 
     public void openActivity1(){

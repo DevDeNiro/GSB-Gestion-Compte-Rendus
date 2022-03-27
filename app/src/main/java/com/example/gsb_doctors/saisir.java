@@ -158,7 +158,7 @@ public class saisir extends AppCompatActivity {
                             data[6] = Id;
                             data[7] = Medecin;
 
-                            PutData putData = new PutData("http://10.60.20.146/GSB_doctors/secure_API/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
+                            PutData putData = new PutData("https://apicompterendu.fr/visiteurInsertCompteRendu.php", "POST", field, data);  // Mettre son ip
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
@@ -183,7 +183,7 @@ public class saisir extends AppCompatActivity {
             }
         });
 
-        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
+        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
         getJSON(lien);
     }
 

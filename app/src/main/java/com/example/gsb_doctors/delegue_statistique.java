@@ -76,7 +76,7 @@ public class delegue_statistique extends AppCompatActivity {
         });
         System.out.println(Ile);
 
-        getJSON("http://10.60.20.146/GSB_doctors/secure_API/getCompterenduRegion.php");
+        getJSON("https://apicompterendu.fr/getCompterenduRegion.php");
 
         // Récupération des valeurs de région dans des variables
         SharedPreferences ile2 = getApplicationContext().getSharedPreferences("regionIle", MODE_PRIVATE);

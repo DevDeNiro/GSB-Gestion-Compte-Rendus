@@ -61,7 +61,7 @@ public class inscription extends AppCompatActivity {
               data[0] = pseudo;
               data[1] = password;
 
-              PutData putData = new PutData("http://10.60.20.146/GSB_doctors/secure_API/signup.php", "POST", field, data);  // Mettre son ip
+              PutData putData = new PutData("https://apicompterendu.fr/signup.php", "POST", field, data);  // Mettre son ip
               if (putData.startPut()) {
                 if (putData.onComplete()) {
                   progressBar.setVisibility(View.GONE);

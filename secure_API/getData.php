@@ -1,10 +1,10 @@
 <?php
-
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$databasename = 'gsb_doctor';
-
+require "DataBase.php";
+$db = new DataBase();
+$servername = $db->getServername();
+$username = $db->getUserame();
+$password = $db->getPassword();
+$databasename = $db->getDatabasename();
 
 $conn = new mysqli($servername, $username, $password, $databasename);
 
@@ -29,6 +29,7 @@ while ($stmt->fetch()) {
         'id' => $id
     ];
 
+    $temp = array_map('utf8_encode',$temp);
     array_push($tab, $temp);
 }
 

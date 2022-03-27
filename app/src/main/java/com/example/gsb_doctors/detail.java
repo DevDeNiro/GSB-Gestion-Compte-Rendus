@@ -49,7 +49,7 @@ public class detail extends AppCompatActivity {
 
         System.out.println(text);
 
-        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getDataDetailVisiteur.php" + "?id=" + text;
+        String lien = "https://apicompterendu.fr/getDataDetailVisiteur.php" + "?id=" + text;
         getJSON(lien);
 
         b1 = (Button) findViewById(R.id.bouton1);
@@ -95,7 +95,7 @@ public class detail extends AppCompatActivity {
                 data[0] = id_compte;
 
 
-                PutData putData = new PutData("http://10.60.20.146/GSB_doctors/secure_API/delete.php", "POST", field, data);  // Mettre son ip
+                PutData putData = new PutData("https://apicompterendu.fr/delete.php", "POST", field, data);  // Mettre son ip
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
 

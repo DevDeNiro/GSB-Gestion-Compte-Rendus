@@ -67,7 +67,7 @@ public class consulter extends AppCompatActivity {
 
         System.out.println(get_id);
 
-        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getConsulterVisiteur.php?id=" + get_id;
+        String lien = "https://apicompterendu.fr/getConsulterVisiteur.php?id=" + get_id;
         System.out.println(get_id);
         getJSON(lien);
 

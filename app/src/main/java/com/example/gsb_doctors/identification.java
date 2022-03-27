@@ -66,7 +66,7 @@ public class identification extends AppCompatActivity {
                                 data[0] = Pseudo;
                                 data[1] = password;
 
-                                PutData putData = new PutData("http://10.60.20.146/GSB_doctors/secure_API/login.php", "POST", field, data);  // Mettre son adrr ip
+                                PutData putData = new PutData("https://apicompterendu.fr/login.php", "POST", field, data);  // Mettre son adrr ip
                                 if (putData.startPut()) {
                                     if (putData.onComplete()) {
                                         progressBar.setVisibility(View.GONE);

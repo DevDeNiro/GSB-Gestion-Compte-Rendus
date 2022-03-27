@@ -29,6 +29,19 @@ class DataBase
         return $this->connect;
     }
 
+    function getServername(){
+        return $this->servername;
+    }
+    function getUserame(){
+        return $this->username;
+    }
+    function getPassword(){
+        return $this->password;
+    }
+    function getDatabasename(){
+        return $this->databasename;
+    }
+
     function prepareData($data)
     {
         return mysqli_real_escape_string($this->connect, stripslashes(htmlspecialchars($data)));

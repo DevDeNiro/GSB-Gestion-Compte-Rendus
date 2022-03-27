@@ -64,7 +64,7 @@ public class visiteur_medecin extends AppCompatActivity {
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("region", MODE_PRIVATE);
         String get_region = prefs.getString("region1", "Aucun");
 
-        String lien = "http://10.60.20.146/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
+        String lien = "https://apicompterendu.fr/getListMedecin.php?region=" + get_region;
         getJSON(lien);
     }
 
