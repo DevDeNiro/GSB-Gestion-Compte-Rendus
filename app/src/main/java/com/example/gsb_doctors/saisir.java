@@ -183,7 +183,7 @@ public class saisir extends AppCompatActivity {
             }
         });
 
-        String lien = "http://192.168.1.136/GSB_doctors/secure_API/getListMedecin.php?region=" + get_region;
+        String lien = "https://apicompterendu.fr/getListMedecin.php?region=" + get_region;
         getJSON(lien);
     }
 

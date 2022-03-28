@@ -142,7 +142,6 @@ public class visiteur_medecin extends AppCompatActivity {
             JSONObject obj = jsonArray.getJSONObject(i);
             heroes[i] = obj.getString("prenom") + " " + obj.getString("nom");;
         }
-
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
         listView2.setAdapter(arrayAdapter);
     }
