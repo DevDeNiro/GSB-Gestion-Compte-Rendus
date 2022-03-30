@@ -6,4 +6,5 @@
     <string name="detail">GSB-doctors | Détail</string>
     <string name="compte">GSB-doctors | Compte-rendu</string>
     <string name="stat">GSB-doctors | Statistique</string>
+    <string name="nom_appli">GSB Compte-rendu</string>
 </resources>
