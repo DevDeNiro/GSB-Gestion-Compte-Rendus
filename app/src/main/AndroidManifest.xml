@@ -29,7 +29,7 @@
             android:name=".identification"
             android:exported="true"
             tools:ignore="Instantiatable"
-            android:label="@string/connecter">
+            android:label="@string/nom_appli">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
