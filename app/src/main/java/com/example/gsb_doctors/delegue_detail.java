@@ -206,7 +206,7 @@ public class delegue_detail extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intentBack = new Intent(this, consulter.class);
+        Intent intentBack = new Intent(this, delegue_compteRendu.class);
         startActivity(intentBack);
 
     }
